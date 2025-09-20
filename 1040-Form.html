@@ -37,7 +37,8 @@
     <script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
 
     <style>
-        html {
+        html,
+        body {
             scrollbar-gutter: stable;
         }
 
@@ -283,14 +284,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-sm-6 col-md-4 fv-row">
-                            <label class="required fs-6 fw-semibold mb-2">Due Date</label>
-                            <div class="position-relative d-flex align-items-center">
-                                <!-- <i class="ki-outline ki-calendar-8 fs-2 position-absolute mx-4"></i>-->
-                                <input class="form-control form-control-solid" type="date"
-                                    placeholder="Select a Due Date" name="due_date" />
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="row">
@@ -621,7 +615,7 @@
                     <div id="dependentsList" class="mb-4"></div>
 
                     <!-- Add Button -->
-                    <button id="btnAddDependent" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" onclick="addDependent()">
                         Add Dependent
                     </button>
                 </div>
@@ -1022,40 +1016,130 @@
             </div>
         </div>
 
+
+
         <!-- Tax and Credits -->
         <div class="card mb-5 mb-xxl-8">
             <div class="card-body">
                 <div id="taxAndCredits" class="form-section">
                     <!-- Title -->
                     <div class="align-items-center mb-4 border-bottom">
-                        <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">Tax and Credits</p>
-                        <p class="text-gray-500 text-hover-primary mb-2">Enter your tax and credit information for the
-                            tax year.
+                        <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                            Tax and Credits
+                        </p>
+                        <p class="text-gray-500 text-hover-primary mb-2">
+                            Enter your tax and credit information for the tax year.
                         </p>
                     </div>
 
                     <!-- Tax & Credit Inputs -->
                     <div class="row g-3">
-                        <div class="col-12 col-sm-6 col-md-4">
-                            <label for="txtTaxableIncome" class="form-label">Taxable Income</label>
-                            <input type="number" id="txtTaxableIncome" class="form-control form-control-solid" readonly>
+                        <!-- Line 16 -->
+                        <div class="col-12">
+                            <label for="line16Tax" class="form-label fw-bold">
+                                Tax (see instructions)
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 16</small>
+
+                            <div class="d-flex flex-wrap gap-3 mb-2 align-items-center">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="chk8814" />
+                                    <label class="form-check-label" for="chk8814">Form 8814</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="chk4972" />
+                                    <label class="form-check-label" for="chk4972">Form 4972</label>
+                                </div>
+                                <div class="form-check d-flex align-items-center">
+                                    <input class="form-check-input me-2" type="checkbox" id="chkOtherForm" />
+                                    <label class="form-check-label me-2" for="chkOtherForm">Other</label>
+                                    <input type="text" class="form-control form-control-sm"
+                                        placeholder="Specify form" />
+                                </div>
+                            </div>
+                            <input type="number" id="line16Tax" class="form-control form-control-solid"
+                                placeholder="e.g., 4500" />
                         </div>
+
+                        <!-- Line 17 -->
                         <div class="col-12 col-sm-6 col-md-4">
-                            <label for="txtTotalTax" class="form-label">Total Tax</label>
-                            <input type="number" id="txtTotalTax" class="form-control form-control-solid">
+                            <label for="line17" class="form-label">
+                                Additional Taxes (from Schedule 2)
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 17</small>
+                            <input type="number" id="line17" class="form-control form-control-solid"
+                                placeholder="e.g., 1200" />
                         </div>
+
+                        <!-- Line 18 -->
                         <div class="col-12 col-sm-6 col-md-4">
-                            <label for="txtFederalTaxWithheld" class="form-label">Federal Tax Withheld</label>
-                            <input type="number" id="txtFederalTaxWithheld" class="form-control form-control-solid">
+                            <label for="line18" class="form-label">
+                                Total Tax Before Credits
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 18 (Add lines 16 & 17)</small>
+                            <input type="number" id="line18" class="form-control form-control-solid" readonly />
                         </div>
+
+                        <!-- Line 19 -->
                         <div class="col-12 col-sm-6 col-md-4">
-                            <label for="txtTotalCredits" class="form-label">Total Credits</label>
-                            <input type="number" id="txtTotalCredits" class="form-control form-control-solid">
+                            <label for="line19" class="form-label">
+                                Child Tax Credit / Credit for Other Dependents
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 19 (Schedule 8812)</small>
+                            <input type="number" id="line19" class="form-control form-control-solid"
+                                placeholder="e.g., 2000" />
+                        </div>
+
+                        <!-- Line 20 -->
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <label for="line20" class="form-label">
+                                Other Nonrefundable Credits (from Schedule 3)
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 20</small>
+                            <input type="number" id="line20" class="form-control form-control-solid"
+                                placeholder="e.g., 500" />
+                        </div>
+
+                        <!-- Line 21 -->
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <label for="line21" class="form-label"> Total Credits </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 21 (Add lines 19 & 20)</small>
+                            <input type="number" id="line21" class="form-control form-control-solid" readonly />
+                        </div>
+
+                        <!-- Line 22 -->
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <label for="line22" class="form-label">
+                                Tax After Credits
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 22 (Line 18 – Line 21)</small>
+                            <input type="number" id="line22" class="form-control form-control-solid" readonly />
+                        </div>
+
+                        <!-- Line 23 -->
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <label for="line23" class="form-label">
+                                Other Taxes (including self-employment tax)
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 23 (Schedule 2, line 21)</small>
+                            <input type="number" id="line23" class="form-control form-control-solid"
+                                placeholder="e.g., 300" />
+                        </div>
+
+                        <!-- Line 24 -->
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <label for="line24" class="form-label fw-bold">
+                                Total Tax
+                            </label>
+                            <small class="text-muted d-block">IRS Form 1040 – Line 24 (Add lines 22 & 23)</small>
+                            <input type="number" id="line24" class="form-control form-control-solid" readonly />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
 
         <!-- Payments -->
         <div class="card mb-5 mb-xxl-8">
@@ -1106,15 +1190,18 @@
                         <div class="col-12 col-sm-6 col-md-4">
                             <label for="txtChildTaxCred" class="form-label">Additional child tax credit (Schedule
                                 8812)</label>
-                            <input type="number" id="txtChildTaxCred" class="form-control form-control-solid">
+                            <input type="number" id="txtChildTaxCred" class="form-control form-control-solid"
+                                placeholder="Click to open Schedule8812" data-modal-type="Schedule8812">
                         </div>
                         <div class="col-12 col-sm-6 col-md-4">
                             <label for="txtUSACred" class="form-label">American opportunity credit (Form 8863)</label>
-                            <input type="number" id="txtUSACred" class="form-control form-control-solid">
+                            <input type="number" id="txtUSACred" class="form-control form-control-solid"
+                                placeholder="Click to open Form8863" data-modal-type="Form8863">
                         </div>
                         <div class="col-12 col-sm-6 col-md-4">
                             <label for="txtAmtSched" class="form-label">Amount from Schedule 3</label>
-                            <input type="number" id="txtAmtSched" class="form-control form-control-solid">
+                            <input type="number" id="txtAmtSched" class="form-control form-control-solid"
+                                placeholder="Click to open Schedule 3" data-modal-type="Schedule3">
                         </div>
                         <div class="col-12 col-sm-6 col-md-4">
                             <label for="txtTotalOtherPay" class="form-label">Total Other Payments</label>
@@ -1911,7 +1998,7 @@
 
         <div class="col-12 col-md-6">
             <label class="form-label">Deductible Part of SE Tax (Schedule SE)</label>
-            <input type="number" class="form-control" placeholder="Click to open Schedule SE" data-modal-type="ScheduleSE">
+            <input type="number" class="form-control" placeholder="Click to open Schedule SE" data-modal-type="FormScheduleSE">
         </div>
 
         <div class="col-12 col-md-6">
@@ -1958,6 +2045,83 @@
 
 
         `,
+                Form8889: `
+<form id="Form8889">
+  <h4 class="mb-3">Form 8889 – Health Savings Account (HSA)</h4>
+
+  <!-- Part I: HSA Contributions and Deduction -->
+  <h5 class="mt-4 mb-2">Part I – HSA Contributions and Deduction</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 1 – Total HSA Contributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 3000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 2 – Employer HSA Contributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 1000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 3 – Total Contributions (Line 1 + Line 2)</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 4 – Qualified HSA Funding Distributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 5 – Excess Contributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 200">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 6 – Net Contributions (Line 3 - Line 5)</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 7 – Maximum Contribution Limit</label>
+      <input type="number" class="form-control" placeholder="e.g., 3500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 8 – Qualified HSA Funding Distributions Included in Line 4</label>
+      <input type="number" class="form-control" placeholder="e.g., 500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 9 – Excess Contributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 200">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 10 – Net HSA Funding Distributions (Line 8 - Line 9)</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12">
+      <label class="form-label">Line 11 – HSA Deduction (Line 6 - Line 10)</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+  </div>
+
+  <!-- Part II: HSA Distributions -->
+  <h5 class="mt-4 mb-2">Part II – HSA Distributions</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 12 – Total HSA Distributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 2000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 13 – Distributions Used for Qualified Medical Expenses</label>
+      <input type="number" class="form-control" placeholder="e.g., 1500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 14 – Taxable Distributions (Line 12 - Line 13)</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 15 – Additional Tax on Taxable Distributions</label>
+      <input type="number" class="form-control" placeholder="e.g., 100">
+    </div>
+  </div>
+</form>
+`,
+
+
                 ScheduleC: `
            <form id="scheduleC">
     <h5 class="mb-3 text-primary">Schedule C - Profit or Loss from Business</h5>
@@ -2568,13 +2732,322 @@
 
 
         `,
+                Schedule8812: `
+<form id="Schedule8812">
+    <h4 class="mb-3">Schedule 8812 – Credits for Qualifying Children and Other Dependents</h4>
+
+    <!-- Part I – Child Tax Credit and Credit for Other Dependents -->
+    <h5 class="mt-4 mb-2">Part I – Child Tax Credit (CTC) & Other Dependents Credit (ODC)</h5>
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 1 – Amount from Form 1040, line 11</label>
+            <input type="number" class="form-control" placeholder="e.g., 45000">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 2a – Excluded Puerto Rico income</label>
+            <input type="number" class="form-control" placeholder="e.g., 2000">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 2b – Amounts from Form 2555, lines 45 & 50</label>
+            <input type="number" class="form-control" placeholder="e.g., 1500">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 2c – Amount from Form 4563, line 15</label>
+            <input type="number" class="form-control" placeholder="e.g., 800">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 4 – Number of qualifying children under age 17 with SSN</label>
+            <input type="number" class="form-control" placeholder="e.g., 2">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 6 – Number of other dependents (ODC)</label>
+            <input type="number" class="form-control" placeholder="e.g., 1">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 9 – Income threshold (based on filing status)</label>
+            <input type="number" class="form-control" placeholder="e.g., 200000">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 13 – Credit Limit Worksheet A result</label>
+            <input type="number" class="form-control" placeholder="e.g., 3000">
+        </div>
+    </div>
+
+    <!-- Part II-A – Additional Child Tax Credit -->
+    <h5 class="mt-4 mb-2">Part II-A – Additional Child Tax Credit (ACTC)</h5>
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="skipACTC">
+        <label class="form-check-label" for="skipACTC">
+            Check if you DO NOT want to claim the Additional Child Tax Credit
+        </label>
+    </div>
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 16a – Difference (CTC eligible minus allowed)</label>
+            <input type="number" class="form-control" placeholder="e.g., 1200">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 16b – Qualifying children under 17 × $1,700</label>
+            <input type="number" class="form-control" placeholder="e.g., 3400">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 18a – Earned income</label>
+            <input type="number" class="form-control" placeholder="e.g., 40000">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 18b – Nontaxable combat pay</label>
+            <input type="number" class="form-control" placeholder="e.g., 0">
+        </div>
+    </div>
+
+    <!-- Part II-B – Special Rules -->
+    <h5 class="mt-4 mb-2">Part II-B – Special Rules (3+ Children or Puerto Rico Residents)</h5>
+    <div class="row g-3">
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 21 – Social Security taxes withheld (W-2)</label>
+            <input type="number" class="form-control" placeholder="e.g., 2500">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 22 – Railroad retirement (Tier 1) taxes</label>
+            <input type="number" class="form-control" placeholder="e.g., 600">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 23 – Additional Medicare taxes</label>
+            <input type="number" class="form-control" placeholder="e.g., 300">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 24 – Add lines 21–23</label>
+            <input type="number" class="form-control" placeholder="e.g., 3400">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 25 – Earned income credit (if applicable)</label>
+            <input type="number" class="form-control" placeholder="e.g., 500">
+        </div>
+        <div class="col-12 col-md-6">
+            <label class="form-label">Line 26 – Other credits/payments (see instructions)</label>
+            <input type="number" class="form-control" placeholder="e.g., 200">
+        </div>
+        <div class="col-12">
+            <label class="form-label">Line 27 – Additional Child Tax Credit (final)</label>
+            <input type="number" class="form-control" placeholder="e.g., 1500">
+        </div>
+    </div>
+</form>
+`,
+
                 Form8863: `
             <form id="form8863">
-                <div class="mb-3">
-                    <label class="form-label">Education Credits</label>
-                    <input type="number" class="form-control" placeholder="e.g., 1200">
-                </div>
-            </form>
+  <h2 class="mb-4">Form 8863 – Education Credits (American Opportunity & Lifetime Learning Credits) (2024)</h2>
+
+  <!-- Identification -->
+  <div class="row">
+    <div class="col-12 col-md-6 mb-3">
+      <label class="form-label">Name(s) shown on return</label>
+      <input type="text" class="form-control" name="taxpayer_name" placeholder="e.g., John Doe">
+    </div>
+    <div class="col-12 col-md-6 mb-3">
+      <label class="form-label">Social Security Number</label>
+      <input type="text" class="form-control" name="ssn" placeholder="xxx-xx-xxxx">
+    </div>
+  </div>
+
+  <!-- Part I -->
+  <fieldset class="mb-4">
+    <legend>Part I — Refundable American Opportunity Credit</legend>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">1. Total of all students’ amounts from Part III, line 30</label>
+        <input type="number" class="form-control" name="part1_line1">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">2. MAGI limit ($180,000 MFJ / $90,000 others)</label>
+        <input type="number" class="form-control" name="part1_line2" readonly>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">3. Amount from Form 1040 line 11</label>
+        <input type="number" class="form-control" name="part1_line3">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">4. Subtract line 3 from line 2</label>
+        <input type="number" class="form-control" name="part1_line4">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">5. Threshold ($20,000 MFJ / $10,000 others)</label>
+        <input type="number" class="form-control" name="part1_line5" readonly>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">6. If line 4 ≥ line 5 → 1.000, else divide line 4 by line 5</label>
+        <input type="number" class="form-control" name="part1_line6" step="0.001">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">7. Multiply line 1 by line 6</label>
+        <input type="number" class="form-control" name="part1_line7">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">8. Refundable portion of credit (40% of line 7)</label>
+        <input type="number" class="form-control" name="part1_line8">
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Part II -->
+  <fieldset class="mb-4">
+    <legend>Part II — Nonrefundable Education Credits</legend>
+    <div class="row">
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">9. Line 7 minus line 8</label>
+        <input type="number" class="form-control" name="part2_line9">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">10. Total of all students’ amounts from Part III, line 31</label>
+        <input type="number" class="form-control" name="part2_line10">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">11. Smaller of line 10 or $10,000</label>
+        <input type="number" class="form-control" name="part2_line11">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">12. Multiply line 11 by 20% (0.20)</label>
+        <input type="number" class="form-control" name="part2_line12">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">13. MAGI limit ($180,000 MFJ / $90,000 others)</label>
+        <input type="number" class="form-control" name="part2_line13" readonly>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">14. Amount from Form 1040 line 11</label>
+        <input type="number" class="form-control" name="part2_line14">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">15. Subtract line 14 from line 13</label>
+        <input type="number" class="form-control" name="part2_line15">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">16. Threshold ($20,000 MFJ / $10,000 others)</label>
+        <input type="number" class="form-control" name="part2_line16" readonly>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">17. If line 15 ≥ line 16 → 1.000, else divide line 15 by line 16</label>
+        <input type="number" class="form-control" name="part2_line17" step="0.001">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">18. Multiply line 12 by line 17</label>
+        <input type="number" class="form-control" name="part2_line18">
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label class="form-label">19. Nonrefundable education credits</label>
+        <input type="number" class="form-control" name="part2_line19">
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Part III -->
+  <fieldset class="mb-4">
+    <legend>Part III — Student and Educational Institution Information</legend>
+    <div class="student-block border rounded p-3 mb-3">
+      <h5>Student 1</h5>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Student name</label>
+          <input type="text" class="form-control" name="student1_name">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Student SSN</label>
+          <input type="text" class="form-control" name="student1_ssn">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Institution name</label>
+          <input type="text" class="form-control" name="student1_institution_name">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Institution EIN</label>
+          <input type="text" class="form-control" name="student1_institution_ein">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Did student receive Form 1098-T for 2024?</label>
+          <select class="form-select" name="student1_1098t_2024">
+            <option value="">— select —</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Did student receive Form 1098-T for 2023 with box 7 checked?</label>
+          <select class="form-select" name="student1_1098t_2023_box7">
+            <option value="">— select —</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Has AOTC been claimed 4 prior years for this student?</label>
+          <select class="form-select" name="student1_prior_aotc">
+            <option value="">— select —</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Was student enrolled at least half-time in 2024?</label>
+          <select class="form-select" name="student1_half_time">
+            <option value="">— select —</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Did student complete first 4 years before 2024?</label>
+          <select class="form-select" name="student1_four_years">
+            <option value="">— select —</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">Student felony drug conviction before end of 2024?</label>
+          <select class="form-select" name="student1_felony">
+            <option value="">— select —</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">27. Adjusted qualified education expenses (AOTC, ≤ $4,000)</label>
+          <input type="number" class="form-control" name="student1_line27">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">28. Subtract $2,000 from line 27 (if ≤ 0 enter zero)</label>
+          <input type="number" class="form-control" name="student1_line28">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">29. Multiply line 28 by 25% (0.25)</label>
+          <input type="number" class="form-control" name="student1_line29">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">30. If line 28 is zero → line 27; else $2,000 + line 29</label>
+          <input type="number" class="form-control" name="student1_line30">
+        </div>
+        <div class="col-12 col-md-6 mb-3">
+          <label class="form-label">31. Adjusted qualified education expenses (Lifetime Learning Credit)</label>
+          <input type="number" class="form-control" name="student1_line31">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+ 
+</form>
+
         `,
                 Form8839: `
           <form id="form8839" class="container mt-4">
@@ -2643,7 +3116,296 @@
 
 </form>
 
-        `
+        `,
+                Schedule3: `
+<form id="Schedule3">
+  <h4 class="mb-3">Schedule 3 – Additional Credits and Payments (Form 1040, 2024)</h4>
+
+  <!-- Part I – Nonrefundable Credits -->
+  <h5 class="mt-4 mb-2">Part I – Nonrefundable Credits</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 1 – Foreign Tax Credit (Form 1116)</label>
+      <input type="number" class="form-control" placeholder="e.g., 500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 2 – Child & Dependent Care Credit (Form 2441)</label>
+      <input type="number" class="form-control" placeholder="e.g., 1200">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 3 – Education Credits (Form 8863, line 19)</label>
+      <input type="number" class="form-control" placeholder="e.g., 1500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 4 – Retirement Savings Contributions Credit (Form 8880)</label>
+      <input type="number" class="form-control" placeholder="e.g., 400">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 5a – Residential Clean Energy Credit (Form 5695, line 15)</label>
+      <input type="number" class="form-control" placeholder="e.g., 800">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 5b – Energy Efficient Home Improvement Credit (Form 5695, line 32)</label>
+      <input type="number" class="form-control" placeholder="e.g., 300">
+    </div>
+
+    <!-- Lines 6a-6z – Other Nonrefundable Credits -->
+    <div class="col-12">
+      <h6 class="mt-3">Line 6 – Other Nonrefundable Credits</h6>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">6a – General Business Credit (Form 3800)</label>
+      <input type="number" class="form-control" placeholder="e.g., 250">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">6b – Credit for Prior Year Minimum Tax (Form 8801)</label>
+      <input type="number" class="form-control" placeholder="e.g., 100">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">6c – Adoption Credit (Form 8839)</label>
+      <input type="number" class="form-control" placeholder="e.g., 2000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">6d – Credit for the Elderly or Disabled (Schedule R)</label>
+      <input type="number" class="form-control" placeholder="e.g., 150">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">6f – Clean Vehicle Credit (Form 8936)</label>
+      <input type="number" class="form-control" placeholder="e.g., 500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">6g – Mortgage Interest Credit (Form 8396)</label>
+      <input type="number" class="form-control" placeholder="e.g., 300">
+    </div>
+    <div class="col-12">
+      <label class="form-label">6z – Other nonrefundable credits (describe & amount)</label>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Description">
+        <input type="number" class="form-control" placeholder="Amount">
+      </div>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Line 8 – Total nonrefundable credits (sum of lines 1-5 & line 6)</label>
+      <input type="number" class="form-control" placeholder="Auto-sum or user-entered">
+    </div>
+  </div>
+
+  <!-- Part II – Other Payments & Refundable Credits -->
+  <h5 class="mt-4 mb-2">Part II – Payments & Refundable Credits</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 9 – Net Premium Tax Credit (Form 8962)</label>
+      <input type="number" class="form-control" placeholder="e.g., 600">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 10 – Amount paid with extension to file</label>
+      <input type="number" class="form-control" placeholder="e.g., 0">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 11 – Excess Social Security & Tier-1 RRTA tax withheld</label>
+      <input type="number" class="form-control" placeholder="e.g., 200">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 12 – Credit for federal tax on fuels (Form 4136)</label>
+      <input type="number" class="form-control" placeholder="e.g., 50">
+    </div>
+
+    <!-- Lines 13a-13z – Other refundable/payments -->
+    <div class="col-12">
+      <h6 class="mt-3">Line 13 – Other payments or refundable credits</h6>
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">13a – From Form 2439</label>
+      <input type="number" class="form-control" placeholder="e.g., 100">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">13b – Section 1341 credit (repayment from earlier years)</label>
+      <input type="number" class="form-control" placeholder="e.g., 200">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">13c – Net elective payment election amount (Form 3800, Part III, line 6, col j)</label>
+      <input type="number" class="form-control" placeholder="e.g., 150">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">13d – Deferred amount of net 965 tax liability</label>
+      <input type="number" class="form-control" placeholder="e.g., 0">
+    </div>
+    <div class="col-12">
+      <label class="form-label">13z – Other refundable credits or payments (describe & amount)</label>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Description">
+        <input type="number" class="form-control" placeholder="Amount">
+      </div>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Line 14 – Total other refundable credits & payments (sum of lines 13a-13z)</label>
+      <input type="number" class="form-control" placeholder="Auto-sum or user-entered">
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Line 15 – Total payments & refundable credits (lines 9-12 + line 14)</label>
+      <input type="number" class="form-control" placeholder="Auto-sum or user-entered">
+    </div>
+  </div>
+</form>
+`,
+                Form8917: `
+<form id="Form8917">
+  <h4 class="mb-3">Form 8917 – Tuition and Fees Deduction</h4>
+
+  <!-- Student(s) Info -->
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Student Name</label>
+      <input type="text" class="form-control" placeholder="First Last">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Student Social Security Number</label>
+      <input type="text" class="form-control" placeholder="XXX-XX-XXXX">
+    </div>
+    <div class="col-12">
+      <label class="form-label">Adjusted Qualified Expenses (tuition & required fees minus tax-free assistance)</label>
+      <input type="number" class="form-control" placeholder="e.g., 5000">
+    </div>
+  </div>
+
+  <!-- Totals & Income Info -->
+  <div class="row g-3 mt-4">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 2 – Total Adjusted Qualified Expenses (all students)</label>
+      <input type="number" class="form-control" placeholder="e.g., 5000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 3 – Total Income (Form 1040 AGI or relevant line)</label>
+      <input type="number" class="form-control" placeholder="e.g., 60000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 4 – Amount from Schedule 1 (write-ins / adjustments)</label>
+      <input type="number" class="form-control" placeholder="e.g., 3000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 5 – Income after subtraction (line 3 minus line 4)</label>
+      <input type="number" class="form-control" placeholder="auto-calc or enter">
+    </div>
+  </div>
+
+  <!-- Deduction Calculation -->
+  <div class="row g-3 mt-4">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 6 – Deduction Amount (based on income & expense limits)</label>
+      <input type="number" class="form-control" placeholder="e.g., 4000 or 2000 or less">
+    </div>
+  </div>
+</form>
+`,
+                FormScheduleSE: `
+<form id="FormScheduleSE">
+  <h4 class="mb-3">Schedule SE – Self-Employment Tax</h4>
+
+  <!-- Part I: Self-Employment Tax -->
+  <h5 class="mt-4 mb-2">Part I – Self-Employment Tax</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 1a – Net profit from Schedule F</label>
+      <input type="number" class="form-control" placeholder="e.g., 15000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 1b – Conservation Reserve Program payments</label>
+      <input type="number" class="form-control" placeholder="e.g., 2000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 2 – Net profit from Schedule C</label>
+      <input type="number" class="form-control" placeholder="e.g., 25000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 3 – Total of lines 1a and 2</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 4a – Multiply line 3 by 92.35%</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 4b – Self-employment tax</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 5 – Deduction for one-half of self-employment tax</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+  </div>
+
+  <!-- Part II: Optional Methods to Figure Net Earnings -->
+  <h5 class="mt-4 mb-2">Part II – Optional Methods to Figure Net Earnings</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 6 – Net earnings under optional method</label>
+      <input type="number" class="form-control" placeholder="e.g., 30000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 7 – Self-employment tax under optional method</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+  </div>
+</form>
+`,
+                Form2106: `
+<form id="Form2106">
+  <h4 class="mb-3">Form 2106 – Employee Business Expenses</h4>
+
+  <!-- Part I: Employee Business Expenses -->
+  <h5 class="mt-4 mb-2">Part I – Employee Business Expenses</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 1 – Vehicle Expenses</label>
+      <input type="number" class="form-control" placeholder="e.g., 3000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 2 – Travel Expenses</label>
+      <input type="number" class="form-control" placeholder="e.g., 1500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 3 – Meals and Entertainment</label>
+      <input type="number" class="form-control" placeholder="e.g., 1000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 4 – Other Expenses</label>
+      <input type="number" class="form-control" placeholder="e.g., 500">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 5 – Total Expenses</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+  </div>
+
+  <!-- Part II: Reimbursements -->
+  <h5 class="mt-4 mb-2">Part II – Reimbursements</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 6 – Reimbursements Received</label>
+      <input type="number" class="form-control" placeholder="e.g., 2000">
+    </div>
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 7 – Net Expenses (Line 5 - Line 6)</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+  </div>
+
+  <!-- Part III: Deduction -->
+  <h5 class="mt-4 mb-2">Part III – Deduction</h5>
+  <div class="row g-3">
+    <div class="col-12 col-md-6">
+      <label class="form-label">Line 8 – Deduction Amount</label>
+      <input type="number" class="form-control" placeholder="auto-calculated">
+    </div>
+  </div>
+</form>
+`,
+
+
+
                 // Add remaining forms like Schedule 3, Schedule 2, SE Tax, Payments etc.
             };
 
@@ -2841,6 +3603,56 @@
 
 
 
+
+        function addDependent() {
+            const dependentsList = document.getElementById("dependentsList");
+            console.log('test', dependentsList);
+            debugger;
+            const row = document.createElement("div");
+            row.classList.add("dependent-entry", "border", "rounded", "p-3", "mb-3");
+
+            row.innerHTML = `
+      <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-3">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" name="firstName[]">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" name="lastName[]">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <label class="form-label">Social Security Number</label>
+          <input type="text" class="form-control" name="ssn[]">
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <label class="form-label">Relationship</label>
+          <input type="text" class="form-control" name="relationship[]">
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="childTaxCredit[]">
+            <label class="form-check-label">Child Tax Credit</label>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" name="otherDependent[]">
+            <label class="form-check-label">Other Dependent Credit</label>
+          </div>
+        </div>
+        <div class="col-12 text-end">
+          <button type="button" class="btn btn-danger btn-sm" onclick="removeDependent(this)">Remove</button>
+        </div>
+      </div>
+    `;
+
+            dependentsList.appendChild(row);
+        }
+
+        function removeDependent(button) {
+            button.closest(".dependent-entry").remove();
+        }
 
     </script>
 
