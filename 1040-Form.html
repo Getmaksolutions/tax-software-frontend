@@ -450,7 +450,8 @@
                         <!--end::Input group-->
 
                         <div class="col-12 col-sm-6 col-md-4">
-                            <div id="pnlMfsSpouseName" class="d-flex flex-column mb-8 fv-row">
+                            <div id="pnlMfsSpouseName" class="d-flex flex-column mb-8 fv-row"
+                                style="display: none !important;">
                                 <label for="txtMfsSpouseName" class="fs-6 fw-semibold mb-2">Spouse's Name</label>
                                 <input type="text" id="txtMfsSpouseName" class="form-control form-control-solid"
                                     placeholder="Jane Doe">
@@ -458,7 +459,8 @@
                         </div>
 
                         <div class="col-12 col-sm-6 col-md-4">
-                            <div id="pnlHohOrQssChildName" class="d-flex flex-column mb-8 fv-row">
+                            <div id="pnlHohOrQssChildName" class="d-flex flex-column mb-8 fv-row"
+                                style="display: none !important;">
                                 <label for="txtHohOrQssChildName" class="fs-6 fw-semibold mb-2">Child's Name</label>
                                 <input type="text" id="txtHohOrQssChildName" class="form-control form-control-solid"
                                     placeholder="Child's full name">
@@ -467,8 +469,7 @@
                     </div>
 
                     <!-- Checkbox Section -->
-                    <h3 class="h6 fw-semibold mt-3 mb-2">Special Conditions</h3>
-                    <div class="row">
+                    <div class="row" id="SpecialConditions" style="display: none !important;">
                         <div class="col-12 col-sm-6">
                             <div class="form-check d-flex align-items-center gap-2 mb-3">
                                 <input type="checkbox" id="chkNonresidentAlienSpouse" class="form-check-input mt-0">
@@ -481,7 +482,8 @@
 
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-4">
-                            <div id="pnlNonresidentAlienSpouseName" class="d-flex flex-column mb-8 fv-row">
+                            <div id="pnlNonresidentAlienSpouseName" class="d-flex flex-column mb-8 fv-row"
+                                style="display: none !important;">
                                 <label for="txtNonresidentAlienSpouseName" class="fs-6 fw-semibold mb-2">Spouse's
                                     Name</label>
                                 <input type="text" id="txtNonresidentAlienSpouseName"
@@ -653,6 +655,9 @@
                                 </label>
                                 <input type="number" id="txtW2Wages" class="form-control form-control-solid"
                                     placeholder="e.g., 50000" data-modal-type="W2Form">
+                                <!--<button class="btn btn-primary"
+                                    onclick="loadModal('1040-Modals/W2-Form.html', '#W2Modal')">Open W2
+                                    Form</button>-->
                             </div>
 
                             <div class="col-12 col-sm-6">
@@ -1496,6 +1501,11 @@
     </div>
     </div>
 
+    <div id="modals-container"></div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <!--end::Modal - Invite Friend-->
     <!--end::Modals-->
     <!--begin::Javascript-->
@@ -1549,9 +1559,52 @@
     <script src="assets/js/custom/utilities/modals/users-search.js"></script>
 
     <script>
+        function loadModal(file, modalSelector) {
+            $("#modals-container").load(file, function (response, status, xhr) {
+                if (status === "error") {
+                    console.error("Error loading file:", xhr.status, xhr.statusText);
+                } else {
+                    console.log("Loaded:", file);
+                    $(modalSelector).modal("show");
+                }
+            });
+        }
+
         // ===========================
         // Dynamic Modal Script for Form 1040
         // ===========================
+
+        $(document).ready(function () {
+            function updateFilingStatusFields() {
+                let status = $("select[name='currnecy']").val();
+                let isNonresidentSpouse = $("#chkNonresidentAlienSpouse").is(":checked");
+
+                // Hide all conditional panels by default
+                $("#pnlMfsSpouseName").hide();
+                $("#pnlHohOrQssChildName").hide();
+                $("#pnlNonresidentAlienSpouseName").hide();
+
+                // Show fields based on filing status
+                if (status === "married_filing_separately") {
+                    $("#pnlMfsSpouseName").show();
+                }
+
+                if (status === "head_of_household" || status === "qualifying_surviving_spouse") {
+                    $("#pnlHohOrQssChildName").show();
+                }
+
+                if (isNonresidentSpouse) {
+                    $("#pnlNonresidentAlienSpouseName").show();
+                }
+            }
+
+            // Run on page load
+            updateFilingStatusFields();
+
+            // Run whenever dropdown or checkbox changes
+            $("select[name='currnecy']").on("change", updateFilingStatusFields);
+            $("#chkNonresidentAlienSpouse").on("change", updateFilingStatusFields);
+        });
 
         document.addEventListener("DOMContentLoaded", function () {
             // Initialize Bootstrap tooltips
@@ -1646,7 +1699,6 @@
     </div>
 </form>
 `,
-
                 Form8919: `
          <form id="form8919">
 
@@ -2120,8 +2172,6 @@
   </div>
 </form>
 `,
-
-
                 ScheduleC: `
            <form id="scheduleC">
     <h5 class="mb-3 text-primary">Schedule C - Profit or Loss from Business</h5>
@@ -2834,7 +2884,6 @@
     </div>
 </form>
 `,
-
                 Form8863: `
             <form id="form8863">
   <h2 class="mb-4">Form 8863 – Education Credits (American Opportunity & Lifetime Learning Credits) (2024)</h2>
@@ -3403,9 +3452,6 @@
   </div>
 </form>
 `,
-
-
-
                 // Add remaining forms like Schedule 3, Schedule 2, SE Tax, Payments etc.
             };
 
@@ -3601,13 +3647,10 @@
             });
         });
 
-
-
-
         function addDependent() {
             const dependentsList = document.getElementById("dependentsList");
-            console.log('test', dependentsList);
-            debugger;
+            // console.log('test', dependentsList);
+            // debugger;
             const row = document.createElement("div");
             row.classList.add("dependent-entry", "border", "rounded", "p-3", "mb-3");
 
