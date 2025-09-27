@@ -1,0 +1,74 @@
+<div class="modal fade" id="scheduleBModal" tabindex="-1" aria-labelledby="scheduleBLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scheduleBModal">schedule B</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="scheduleB">
+
+                    <!-- Part I: Interest -->
+                    <h5 class="mb-3">Part I: Interest</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12">
+                            <label class="form-label">1. Interest income</label>
+                            <textarea class="form-control form-control-solid" placeholder="e.g., Bank A: $500, Bank B: $1000"></textarea>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2. Tax-exempt interest</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">3. Ordinary dividends</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1500" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">4. Qualified dividends</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000" step="0.01">
+                        </div>
+                    </div>
+
+                    <!-- Part II: Foreign Accounts and Trusts -->
+                    <h5 class="mb-3">Part II: Foreign Accounts and Trusts</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12">
+                            <label class="form-label">7a. At any time during 2024, did you have a financial interest in
+                                or signature authority over a financial account (such as a bank account, securities
+                                account, or brokerage account) located in a foreign country?</label>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="foreignAccount"
+                                    id="foreignAccountYes" value="yes">
+                                <label class="form-check-label" for="foreignAccountYes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="foreignAccount" id="foreignAccountNo"
+                                    value="no">
+                                <label class="form-check-label" for="foreignAccountNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">7b. At any time during 2024, did you receive a distribution from,
+                                or were you a grantor of, or transferor to, a foreign trust?</label>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name="foreignTrust" id="foreignTrustYes"
+                                    value="yes">
+                                <label class="form-check-label" for="foreignTrustYes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="foreignTrust" id="foreignTrustNo"
+                                    value="no">
+                                <label class="form-check-label" for="foreignTrustNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

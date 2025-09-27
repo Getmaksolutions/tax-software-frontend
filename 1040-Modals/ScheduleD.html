@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IRS Form SCHEDULE D - Capital Gains and Losses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+    <style>
+        .form-control form-control-solid:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <script>
+        var defaultThemeMode = "light"; var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+    <div class="container">
+        <div class="mt-4 pt-4"></div>
+
+        <div class="card mb-5 mb-xl-10 shadow-sm">
+            <div class="card-body p-4 p-md-6">
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center">
+
+                    <div class="me-4 mb-3 mb-sm-0 text-center text-sm-start rounded">
+                        <img src="../assets/media/logos/IRS_Logo.png" alt="IRS Logo" class="img-fluid rounded"
+                            style="max-width: 120px; width: 100%; height: auto;">
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between flex-wrap align-items-start mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="text-dark fs-2 fw-bold">IRS Form SCHEDULE D</span>
+                                <p class="mb-1 text-muted">Department of the Treasury—Internal Revenue Service</p>
+                                <p class="fw-semibold mb-1">OMB No. 1545-0074</p>
+                                <p class="text-primary mb-1">Capital Gains and Losses</p>
+                                <p class="fw-semibold mb-0">Tax Year 2025</p>
+                            </div>
+
+                            <div class="d-flex align-items-center mt-3 mt-sm-0">
+
+                                <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                    <a href="#"
+                                        class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                        data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-outline ki-night-day theme-light-show fs-1"></i>
+                                        <i class="ki-outline ki-moon theme-dark-show fs-1"></i>
+                                    </a>
+
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded 
+                                        menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color 
+                                        fw-semibold py-4 fs-base w-150px" data-kt-menu="true"
+                                        data-kt-element="theme-mode-menu">
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="light">
+                                                <span class="menu-icon"><i
+                                                        class="ki-outline ki-night-day fs-2"></i></span>
+                                                <span class="menu-title">Light</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="dark">
+                                                <span class="menu-icon"><i class="ki-outline ki-moon fs-2"></i></span>
+                                                <span class="menu-title">Dark</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="system">
+                                                <span class="menu-icon"><i class="ki-outline ki-screen fs-2"></i></span>
+                                                <span class="menu-title">System</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    onclick="window.location.href='../1040-Form.html'">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xxl-8">
+            <div class="card-body">
+                <div class="align-items-center mb-2 border-bottom mb-2">
+                    <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                        Qualified Adoption Expenses
+                    </p>
+                    <p class="text-gray-500 text-hover-primary mb-4">
+                        Complete the details below as per IRS Form 8839.
+                    </p>
+                </div>
+
+                <form id="scheduleD">
+
+                    <!-- Part I: Short-Term Capital Gains and Losses -->
+                    <h5 class="mb-3">Part I: Short-Term Capital Gains and Losses</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">1. Short-term transactions reported on Form 8949</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2. Totals from Form 8949, Part I</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 3000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">3. Short-term capital gain or (loss)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000" step="0.01">
+                        </div>
+                    </div>
+
+                    <!-- Part II: Long-Term Capital Gains and Losses -->
+                    <h5 class="mb-3">Part II: Long-Term Capital Gains and Losses</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">8. Long-term transactions reported on Form 8949</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 10000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">9. Totals from Form 8949, Part II</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 7000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">10. Long-term capital gain or (loss)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 3000" step="0.01">
+                        </div>
+                    </div>
+
+                    <!-- Part III: Summary -->
+                    <h5 class="mb-3">Part III: Summary</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">13. Capital gain distributions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1500" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">14. Total capital gain or (loss)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">15. Capital loss carryover from 2023</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">16. Capital gain or (loss) after carryover</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 4000" step="0.01">
+                        </div>
+                    </div>
+
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="reset" class="btn btn-light">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>var hostUrl = "../assets/";</script>
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../assets/js/scripts.bundle.js"></script>
+</body>
+
+</html>

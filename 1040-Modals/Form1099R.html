@@ -1,0 +1,92 @@
+<div class="modal fade" id="Form1099RModal" tabindex="-1" aria-labelledby="form1099ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="form1099ModalLabel">form 1099R</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="Form1099RModal">
+
+                    <!-- Payer and Recipient Information -->
+                    <h5 class="mb-3">Payer and Recipient Information</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Payer's Name</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., ABC Retirement Fund">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Payer's TIN</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., 12-3456789">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Recipient's Name</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., John Doe">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Recipient's TIN</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., 123-45-6789">
+                        </div>
+                    </div>
+
+                    <!-- Distribution Details -->
+                    <h5 class="mb-3">Distribution Details</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">1. Gross Distribution</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 7000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2a. Taxable Amount</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 6000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2b. Taxable Amount Not Determined</label>
+                            <input type="checkbox" class="form-check-input" id="taxableAmountNotDetermined">
+                            <label class="form-check-label" for="taxableAmountNotDetermined">Check if applicable</label>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">4. Federal Income Tax Withheld</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 500" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">5. Employee Contributions/Designated Roth Contributions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">6. Net Unrealized Appreciation (NUA) in Employer's
+                                Securities</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1500" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">7. Distribution Code</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., 7" maxlength="1">
+                        </div>
+                    </div>
+
+                    <!-- State Tax Information -->
+                    <h5 class="mb-3">State Tax Information</h5>
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">10. State/Payer's State No.</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., CA">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">11. State Income</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 7000" step="0.01">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">12. State Income Tax Withheld</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 350" step="0.01">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
