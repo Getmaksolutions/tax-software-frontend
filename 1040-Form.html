@@ -461,7 +461,7 @@
                         </div>
                         <!--end::Input group-->
 
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-12 col-sm-12 col-md-6">
                             <div id="pnlMfsSpouseName" class="d-flex flex-column mb-8 fv-row"
                                 style="display: none !important;">
                                 <label for="txtMfsSpouseName" class="fs-6 fw-semibold mb-2">Spouse's Name</label>
@@ -470,7 +470,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-12 col-sm-12 col-md-6">
                             <div id="pnlHohOrQssChildName" class="d-flex flex-column mb-8 fv-row"
                                 style="display: none !important;">
                                 <label for="txtHohOrQssChildName" class="fs-6 fw-semibold mb-2">Child's Name</label>
@@ -482,7 +482,7 @@
 
                     <!-- Checkbox Section -->
                     <div class="row" id="SpecialConditions" style="display: none !important;">
-                        <div class="col-12 col-sm-6">
+                        <div class="col-12 col-sm-12">
                             <div class="form-check d-flex align-items-center gap-2 mb-3">
                                 <input type="checkbox" id="chkNonresidentAlienSpouse" class="form-check-input mt-0">
                                 <label for="chkNonresidentAlienSpouse" class="form-check-label mb-0 small">
@@ -493,7 +493,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-sm-6 col-md-4">
+                        <div class="col-12 col-sm-12 col-md-6">
                             <div id="pnlNonresidentAlienSpouseName" class="d-flex flex-column mb-8 fv-row"
                                 style="display: none !important;">
                                 <label for="txtNonresidentAlienSpouseName" class="fs-6 fw-semibold mb-2">Spouse's
@@ -1548,6 +1548,65 @@
         // ===========================
         // Load modal by file (AJAX include, e.g. ScheduleC.html)
         // ===========================
+
+       $(document).ready(function () {
+    var $select = $("select[name='currnecy']");
+    var $spouseChk = $("#chkNonresidentAlienSpouse");
+
+    var $pnlMfs = $("#pnlMfsSpouseName");
+    var $pnlHohOrQss = $("#pnlHohOrQssChildName");
+    var $pnlNonresident = $("#pnlNonresidentAlienSpouseName");
+    var $specialConditions = $("#SpecialConditions");
+
+    function hide($el) {
+        $el.addClass("d-none").css("display", "");
+    }
+
+    function show($el) {
+        $el.removeClass("d-none").css("display", "");
+    }
+
+    function updateFilingStatusFields() {
+        var status = ($select.val() || "").toLowerCase();
+        var isNonresidentSpouse = $spouseChk.is(":checked");
+
+        // Hide all panels by default
+        hide($pnlMfs);
+        hide($pnlHohOrQss);
+        hide($pnlNonresident);
+        hide($specialConditions);
+
+        // Married Filing Separately → show spouse name
+        if (status === "married_filing_separately") {
+            show($pnlMfs);
+        }
+
+        // Married Filing Jointly → show special conditions row
+        if (status === "married_filing_jointly") {
+            show($specialConditions);
+        }
+
+        // Head of Household or Qualifying Surviving Spouse → show child panel
+        if (status === "head_of_household" || status === "qualifying_surviving_spouse") {
+            show($pnlHohOrQss);
+        }
+
+        // If checkbox ticked → show nonresident spouse panel
+        if (isNonresidentSpouse) {
+            show($pnlNonresident);
+        }
+    }
+
+    // Run once on page load
+    updateFilingStatusFields();
+
+    // Listen for changes
+    $select.on("change select2:select select2:unselect", updateFilingStatusFields);
+    $spouseChk.on("change", updateFilingStatusFields);
+});
+
+
+
         function loadModal(file, modalSelector) {
             const parentModalEl = document.querySelector('.modal.show');
             const parentId = parentModalEl
@@ -1610,6 +1669,7 @@
                 );
 
                 if (status === "married_filing_separately") {
+                    debugger;
                     document.querySelector("#pnlMfsSpouseName")?.classList.remove("d-none");
                 }
                 if (status === "head_of_household" || status === "qualifying_surviving_spouse") {
@@ -1757,53 +1817,11 @@
             <button type="button" class="btn btn-danger mt-2 remove-w2">Remove</button>
         </div>`;
         }
-        function addW2Form() {
-            document.getElementById("w2FormContainer").insertAdjacentHTML("beforeend", createW2Form(w2Count));
-            w2Count++;
-            renumberForms();
-        }
         function renumberForms() {
             document.querySelectorAll(".w2-form").forEach((form, idx) => {
                 form.querySelector(".form-number").innerText = idx + 1;
             });
         }
-        document.addEventListener("DOMContentLoaded", () => addW2Form());
-        document.getElementById("addW2").addEventListener("click", addW2Form);
-        document.getElementById("w2FormContainer").addEventListener("click", e => {
-            if (e.target.classList.contains("remove-w2")) {
-                e.target.closest(".w2-form").remove();
-                renumberForms();
-            }
-        });
-        document.getElementById("saveW2").addEventListener("click", () => {
-            const forms = document.querySelectorAll(".w2-form");
-            const summary = document.getElementById("w2Summary");
-            summary.innerHTML = "";
-            if (forms.length === 0) {
-                summary.innerHTML = `<p class="text-muted mb-0">No W-2 forms added yet</p>`;
-                return;
-            }
-            forms.forEach((form, idx) => {
-                const employerEIN = form.querySelector(`[name^="employerEIN"]`).value || "-";
-                const employerName = form.querySelector(`[name^="employerName"]`).value || "-";
-                const wages = form.querySelector(`[name^="wages"]`).value || "0";
-                const federalTax = form.querySelector(`[name^="federalTax"]`).value || "0";
-                const controlNum = form.querySelector(`[name^="controlNum"]`).value || "0";
-                const ssTax = form.querySelector(`[name^="ssTax"]`).value || "0";
-                const medTax = form.querySelector(`[name^="medTax"]`).value || "0";
-                summary.insertAdjacentHTML("beforeend", `
-                <div class="border rounded p-2 mb-2">
-                    <strong>W-2 Form ${idx + 1}</strong><br>
-                    Employer: ${employerName} (EIN: ${employerEIN})<br>
-                    Wages: $${wages}<br>
-                    Federal Tax Withheld: $${federalTax}<br>
-                    Control Number: ${controlNum}<br>
-                    Social Security Tax: $${ssTax}<br>
-                    Medicare Tax: $${medTax}
-                </div>
-            `);
-            });
-        });
 
         // Dependents
         function addDependent() {
