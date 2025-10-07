@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IRS Schedule R - Credit for the Elderly or the Disabled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+    <style>
+        .form-control.form-control-solid.form-control:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <script>
+        var defaultThemeMode = "light"; var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+    <div class="container">
+        <div class="mt-4 pt-4"></div>
+
+        <div class="card mb-5 mb-xl-10 shadow-sm">
+            <div class="card-body p-4 p-md-6">
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center">
+                    <div class="me-4 mb-3 mb-sm-0 text-center text-sm-start rounded">
+                        <img src="../assets/media/logos/IRS_Logo.png" alt="IRS Logo" class="img-fluid rounded"
+                            style="max-width: 120px; width: 100%; height: auto;">
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between flex-wrap align-items-start mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="text-dark fs-2 fw-bold">IRS Schedule R</span>
+                                <p class="mb-1 text-muted">Department of the Treasury—Internal Revenue Service</p>
+                                <p class="fw-semibold mb-1">OMB No. 1545-0074</p>
+                                <p class="text-primary mb-1">Credit for the Elderly or the Disabled</p>
+                                <p class="fw-semibold mb-0">Tax Year 2025</p>
+                            </div>
+                            <div class="d-flex align-items-center mt-3 mt-sm-0">
+                                <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                    <a href="#"
+                                        class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                        data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-outline ki-night-day theme-light-show fs-1"></i>
+                                        <i class="ki-outline ki-moon theme-dark-show fs-1"></i>
+                                    </a>
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded 
+                                        menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color 
+                                        fw-semibold py-4 fs-base w-150px" data-kt-menu="true"
+                                        data-kt-element="theme-mode-menu">
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="light">
+                                                <span class="menu-icon"><i class="ki-outline ki-night-day fs-2"></i></span>
+                                                <span class="menu-title">Light</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="dark">
+                                                <span class="menu-icon"><i class="ki-outline ki-moon fs-2"></i></span>
+                                                <span class="menu-title">Dark</span>
+                                            </a>
+                                        </div>
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="system">
+                                                <span class="menu-icon"><i class="ki-outline ki-screen fs-2"></i></span>
+                                                <span class="menu-title">System</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    onclick="window.location.href='Schedule3.html'">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xxl-8">
+            <div class="card-body">
+                <div class="align-items-center mb-2 border-bottom mb-2">
+                    <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                        Credit for the Elderly or the Disabled
+                    </p>
+                    <p class="text-gray-500 text-hover-primary mb-4">
+                        Complete the details below as per IRS Schedule R.
+                    </p>
+                </div>
+
+                <form id="ScheduleRModal">
+
+                    <h4 class="mb-3">Schedule R – Credit for the Elderly or the Disabled (2025)</h4>
+
+                    <!-- Basic Information -->
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Name(s) shown on return</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="Enter name(s)">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Your social security number</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., XXX-XX-XXXX">
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <p class="text-muted mb-3">You may be able to take this credit and reduce your tax if by the end of 2025:
+                            <ul>
+                                <li>You were age 65 or older, or</li>
+                                <li>You were under age 65, you retired on permanent and total disability, and you received taxable disability income.</li>
+                            </ul>
+                            But you must also meet other tests. See instructions.
+                        </p>
+                        <p class="text-info mb-3"><strong>TIP:</strong> In most cases, the IRS can figure the credit for you. See instructions.</p>
+                    </div>
+
+                    <!-- Part I – Check the Box for Your Filing Status and Age -->
+                    <h5 class="mt-4 mb-2">Part I – Check the Box for Your Filing Status and Age</h5>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <p class="form-label">If your filing status is:</p>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="single65" value="1">
+                                <label class="form-check-label" for="single65">1. Single, Head of household, or Qualifying surviving spouse - You were 65 or older</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="singleUnder65" value="2">
+                                <label class="form-check-label" for="singleUnder65">2. Single, Head of household, or Qualifying surviving spouse - You were under 65 and you retired on permanent and total disability</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedBoth65" value="3">
+                                <label class="form-check-label" for="marriedBoth65">3. Married filing jointly - Both spouses were 65 or older</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedOneDisabled" value="4">
+                                <label class="form-check-label" for="marriedOneDisabled">4. Married filing jointly - Both spouses were under 65, but only one spouse retired on permanent and total disability</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedBothDisabled" value="5">
+                                <label class="form-check-label" for="marriedBothDisabled">5. Married filing jointly - Both spouses were under 65, and both retired on permanent and total disability</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedOne65OneDisabled" value="6">
+                                <label class="form-check-label" for="marriedOne65OneDisabled">6. Married filing jointly - One spouse was 65 or older, and the other spouse was under 65 and retired on permanent and total disability</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedOne65" value="7">
+                                <label class="form-check-label" for="marriedOne65">7. Married filing jointly - One spouse was 65 or older, and the other spouse was under 65 and not retired on permanent and total disability</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedSeparate65" value="8">
+                                <label class="form-check-label" for="marriedSeparate65">8. Married filing separately - You were 65 or older and you lived apart from your spouse for all of 2025</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="filingStatus" id="marriedSeparateDisabled" value="9">
+                                <label class="form-check-label" for="marriedSeparateDisabled">9. Married filing separately - You were under 65, you retired on permanent and total disability, and you lived apart from your spouse for all of 2025</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mt-3">
+                        <div class="col-12">
+                            <p class="form-label">Did you check box 1, 3, 7, or 8?</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="checkedBox" id="yesBox" value="Yes">
+                                <label class="form-check-label" for="yesBox">Yes. Skip Part II and complete Part III on the back.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="checkedBox" id="noBox" value="No" checked>
+                                <label class="form-check-label" for="noBox">No. Complete Parts II and III.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part II – Statement of Permanent and Total Disability -->
+                    <div class="part-ii" style="display: block;">
+                        <h5 class="mt-4 mb-2">Part II – Statement of Permanent and Total Disability</h5>
+                        <p class="text-muted mb-3">(Complete only if you checked box 2, 4, 5, 6, or 9 above.)</p>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <p class="form-label">If: 1) You filed a physician’s statement for this disability for 1983 or an earlier year, or you filed or got a statement for tax years after 1983 and your physician signed line B on the statement, and</p>
+                                <p class="form-label">2) Due to your continued disabled condition, you were unable to engage in any substantial gainful activity in 2025, check this box</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="disabilityStatement">
+                                    <label class="form-check-label" for="disabilityStatement">I meet the above conditions</label>
+                                </div>
+                                <p class="text-muted mt-2">• If you checked this box, you don’t have to get another statement for 2025.</p>
+                                <p class="text-muted">• If you didn’t check this box, have your physician complete the statement in the instructions. You must keep the statement for your records.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Part III – Figure Your Credit -->
+                            <div class="part-iii" style="display: block;">
+                                <h5 class="mt-4 mb-2">Part III – Figure Your Credit</h5>
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">10. Enter the amount from Form 1040 or 1040-SR, line 11 (taxable income)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line10" placeholder="e.g., 20000">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">11. Enter the total of any amounts from Form 1040 or 1040-SR, Schedule 1, lines 8 through 14, plus any amount from Schedule 1, line 17</label>
+                                        <input type="number" class="form-control form-control-solid" id="line11" placeholder="e.g., 5000">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">12. Add lines 10 and 11</label>
+                                        <input type="number" class="form-control form-control-solid" id="line12" placeholder="Auto-sum">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">13. Enter the initial amount (see instructions)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line13" placeholder="e.g., 7500">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">14. Enter the taxable amount of your social security benefits (from Form 1040 or 1040-SR, line 6b)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line14" placeholder="e.g., 3000">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">15. Add lines 13 and 14</label>
+                                        <input type="number" class="form-control form-control-solid" id="line15" placeholder="Auto-sum">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">16. Enter the taxable amount of your pensions and annuities (from Form 1040 or 1040-SR, line 5b)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line16" placeholder="e.g., 4000">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">17. Add lines 15 and 16</label>
+                                        <input type="number" class="form-control form-control-solid" id="line17" placeholder="Auto-sum">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">18. Enter the larger of line 12 or line 17</label>
+                                        <input type="number" class="form-control form-control-solid" id="line18" placeholder="Auto-max">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">19. Enter the amount from Form 1040 or 1040-SR, line 16 (tax before credits)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line19" placeholder="e.g., 3000">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">20. Enter the initial credit based on your filing status and age (see instructions)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line20" placeholder="e.g., 3750">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">21. Enter the tentative credit (see instructions for calculation)</label>
+                                        <input type="number" class="form-control form-control-solid" id="line21" placeholder="Auto-calc">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label class="form-label">22. Credit for the elderly or the disabled. Enter the smaller of line 19 or line 21 here and on Form 1040 or 1040-SR, Schedule 3, line 6</label>
+                                        <input type="number" class="form-control form-control-solid" id="line22" placeholder="Auto-min">
+                                    </div>
+                                </div>
+                            </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="reset" class="btn btn-light">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Show/hide Part II based on radio selection
+            $('input[name="checkedBox"]').change(function() {
+                if ($('#yesBox').is(':checked')) {
+                    $('.part-ii').hide();
+                } else {
+                    $('.part-ii').show();
+                }
+            });
+        });
+    </script>
+    <script>var hostUrl = "../assets/";</script>
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../assets/js/scripts.bundle.js"></script>
+</body>
+
+</html>

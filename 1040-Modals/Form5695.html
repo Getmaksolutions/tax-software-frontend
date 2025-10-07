@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IRS Form 5695 - Residential Energy Credits</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+    <style>
+        .form-control form-control-solid form-control form-control-solid-solid:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <script>
+        var defaultThemeMode = "light"; var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+    <div class="container">
+        <div class="mt-4 pt-4"></div>
+        <div class="card mb-5 mb-xl-10 shadow-sm">
+            <div class="card-body p-4 p-md-6">
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center">
+
+                    <div class="me-4 mb-3 mb-sm-0 text-center text-sm-start rounded">
+                        <img src="../assets/media/logos/IRS_Logo.png" alt="IRS Logo" class="img-fluid rounded"
+                            style="max-width: 120px; width: 100%; height: auto;">
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between flex-wrap align-items-start mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="text-dark fs-2 fw-bold">IRS Form 5695</span>
+                                <p class="mb-1 text-muted">Department of the Treasury—Internal Revenue Service</p>
+                                <p class="fw-semibold mb-1">OMB No. 1545-0074</p>
+                                <p class="text-primary mb-1">Residential Energy Credits</p>
+                                <p class="fw-semibold mb-0">Tax Year 2025</p>
+                            </div>
+
+                            <div class="d-flex align-items-center mt-3 mt-sm-0">
+
+                                <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                    <a href="#"
+                                        class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                        data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-outline ki-night-day theme-light-show fs-1"></i>
+                                        <i class="ki-outline ki-moon theme-dark-show fs-1"></i>
+                                    </a>
+
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded 
+                                        menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color 
+                                        fw-semibold py-4 fs-base w-150px" data-kt-menu="true"
+                                        data-kt-element="theme-mode-menu">
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="light">
+                                                <span class="menu-icon"><i
+                                                        class="ki-outline ki-night-day fs-2"></i></span>
+                                                <span class="menu-title">Light</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="dark">
+                                                <span class="menu-icon"><i class="ki-outline ki-moon fs-2"></i></span>
+                                                <span class="menu-title">Dark</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="system">
+                                                <span class="menu-icon"><i class="ki-outline ki-screen fs-2"></i></span>
+                                                <span class="menu-title">System</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    onclick="window.location.href='Schedule3.html'">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xxl-8">
+            <div class="card-body">
+                <div class="align-items-center mb-2 border-bottom mb-2">
+                    <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                        Residential Energy Credits
+                    </p>
+                    <p class="text-gray-500 text-hover-primary mb-4">
+                        Complete the details below as per IRS Form 5695.
+                    </p>
+                </div>
+
+                <form id="Form5695Modal">
+
+                    <h4 class="mb-3">Form 5695 – Residential Energy Credits (2025)</h4>
+
+                    <!-- Part I – Residential Clean Energy Credit -->
+                    <h5 class="mt-4 mb-2">Part I – Residential Clean Energy Credit</h5>
+                    <p class="text-muted mb-3">Note: Skip lines 1 through 11 if you only have a credit carryforward from 2023.</p>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label">Enter the complete address of the home where you installed the property and/or technology associated with lines 1 through 4 and 5b</label>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Number and street">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Unit no.">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="City or town">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="State">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="ZIP code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">1. Qualified solar electric property costs</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 10000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2. Qualified solar water heating property costs</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">3. Qualified small wind energy property costs</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 8000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">4. Qualified geothermal heat pump property costs</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 12000">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">5a. Qualified battery storage technology. Does the qualified battery storage technology have a capacity of at least 3 kilowatt hours?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="batteryCapacity" id="batteryYes" value="Yes">
+                                <label class="form-check-label" for="batteryYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="batteryCapacity" id="batteryNo" value="No">
+                                <label class="form-check-label" for="batteryNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">5b. Qualified battery technology costs (if Yes)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 6000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">6a. Add lines 1 through 5b</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">6b. Multiply line 6a by 30% (0.30)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">7a. Qualified fuel cell property. Was qualified fuel cell property installed on, or in connection with, your main home located in the United States?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fuelCellInstalled" id="fuelYes" value="Yes">
+                                <label class="form-check-label" for="fuelYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="fuelCellInstalled" id="fuelNo" value="No">
+                                <label class="form-check-label" for="fuelNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">7b. Enter the complete address of the main home where you installed the fuel cell property</label>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Number and street">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Unit no.">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="City or town">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="State">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="ZIP code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="jointOccupants">
+                                <label class="form-check-label" for="jointOccupants">7c. If the special rule for joint occupants applies, check here and attach a statement</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">8. Qualified fuel cell property costs</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 15000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">9. Multiply line 8 by 30% (0.30)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">10. Kilowatt capacity of property on line 8 above × $1,000</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">11. Enter the smaller of line 9 or line 10</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">12. Credit carryforward from 2023</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">13. Add lines 6b, 11, and 12</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">14. Limitation based on tax liability</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">15. Residential clean energy credit. Smaller of line 13 or 14</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">16. Credit carryforward to 2025. Subtract line 15 from line 13</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                    </div>
+
+                    <!-- Part II – Energy Efficient Home Improvement Credit -->
+                    <h5 class="mt-4 mb-2">Part II – Energy Efficient Home Improvement Credit</h5>
+
+                    <!-- Section A – Qualified Energy Efficiency Improvements -->
+                    <h6>Section A – Qualified Energy Efficiency Improvements</h6>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label">17a. Are the qualified energy efficiency improvements installed in or on your main home located in the United States?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="improvementsUS" id="impUSYes" value="Yes">
+                                <label class="form-check-label" for="impUSYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="improvementsUS" id="impUSNo" value="No">
+                                <label class="form-check-label" for="impUSNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">17b. Are you the original user of the qualified energy efficiency improvements?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="originalUser" id="origYes" value="Yes">
+                                <label class="form-check-label" for="origYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="originalUser" id="origNo" value="No">
+                                <label class="form-check-label" for="origNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">17c. Are the components reasonably expected to remain in use for at least 5 years?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="remainUse" id="remainYes" value="Yes">
+                                <label class="form-check-label" for="remainYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="remainUse" id="remainNo" value="No">
+                                <label class="form-check-label" for="remainNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">17d. Enter the complete address of the main home where you made the qualifying improvements</label>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Number and street">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Unit no.">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="City or town">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="State">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="ZIP code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">17e. Were any of these improvements related to the construction of this main home?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="constructionRelated" id="constYes" value="Yes">
+                                <label class="form-check-label" for="constYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="constructionRelated" id="constNo" value="No">
+                                <label class="form-check-label" for="constNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">18a. Cost of insulation or air sealing material or system</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">18b. Multiply line 18a by 30% (0.30). Do not enter more than $1,200</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">19a. Cost of the most expensive door</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 300">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">19b. Multiply line 19a by 30% (0.30). Do not enter more than $250</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">19c. Cost of all other qualifying exterior doors</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 400">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">19d. Multiply line 19c by 30% (0.30)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">19e. Add lines 19b and 19d. Do not enter more than $500</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">20a. Cost of exterior windows and skylights</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">20b. Multiply line 20a by 30% (0.30). Do not enter more than $600</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                    </div>
+
+                    <!-- Section B – Residential Energy Property Expenditures -->
+                    <h6 class="mt-4">Section B – Residential Energy Property Expenditures</h6>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label">21a. Did you incur costs for qualified energy property installed on or in connection with a home located in the United States?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="energyPropertyUS" id="energyUSYes" value="Yes">
+                                <label class="form-check-label" for="energyUSYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="energyPropertyUS" id="energyUSNo" value="No">
+                                <label class="form-check-label" for="energyUSNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">21b. Was the qualified energy property originally placed into service by you?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="originalService" id="origServYes" value="Yes">
+                                <label class="form-check-label" for="origServYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="originalService" id="origServNo" value="No">
+                                <label class="form-check-label" for="origServNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">21c. Enter the complete address of each home where you installed qualified energy property</label>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Number and street">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control form-control-solid" placeholder="Unit no.">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="City or town">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="State">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control form-control-solid" placeholder="ZIP code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">22a. Cost of central air conditioners</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">22b. Multiply line 22a by 30% (0.30). Do not enter more than $600</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">23a. Cost of natural gas, propane, or oil water heaters</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1500">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">23b. Multiply line 23a by 30% (0.30). Do not enter more than $600</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">24a. Cost of natural gas, propane, or oil furnace or hot water boilers</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2500">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">24b. Multiply line 24a by 30% (0.30). Do not enter more than $600</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">25a. Cost of improvements or replacement of panelboards, subpanelboards, branch circuits, or feeders</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">25b. Multiply line 25a by 30% (0.30). Do not enter more than $600</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label">26a. Did you incur costs for a home energy audit that included an inspection of your main home located in the United States and a written report prepared by a certified home energy auditor?</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="energyAudit" id="auditYes" value="Yes">
+                                <label class="form-check-label" for="auditYes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="energyAudit" id="auditNo" value="No">
+                                <label class="form-check-label" for="auditNo">No</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">26b. Cost of the home energy audits</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 300">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">26c. Multiply line 26b by 30% (0.30). Do not enter more than $150</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">27. Add lines 18b, 19e, 20b, 22b, 23b, 24b, 25b, and 26c</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">28. Enter the smaller of line 27 or $1,200</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">29a. Cost of electric or natural gas heat pumps</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 4000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">29b. Cost of electric or natural gas heat pump water heaters</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 3000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">29c. Cost of biomass stoves and biomass boilers</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">29d. Add lines 29a, 29b, and 29c</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">29e. Multiply line 29d by 30% (0.30). Do not enter more than $2,000</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">30. Add lines 28 and 29e</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">31. Limitation based on tax liability</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1500">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">32. Energy efficient home improvement credit. Smaller of line 30 or 31</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="jointOccupants2">
+                                <label class="form-check-label" for="jointOccupants2">If the special rule for joint occupants applies, check here and attach a statement</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="reset" class="btn btn-light">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>var hostUrl = "../assets/";</script>
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../assets/js/scripts.bundle.js"></script>
+</body>
+
+</html>

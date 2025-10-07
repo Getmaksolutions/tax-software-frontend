@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IRS Form 8801 - Credit for Prior Year Minimum Tax—Individuals, Estates, and Trusts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+    <style>
+        .form-control form-control-solid form-control form-control-solid-solid:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <script>
+        var defaultThemeMode = "light"; var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+    <div class="container">
+        <div class="mt-4 pt-4"></div>
+
+        <div class="card mb-5 mb-xl-10 shadow-sm">
+            <div class="card-body p-4 p-md-6">
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center">
+
+                    <div class="me-4 mb-3 mb-sm-0 text-center text-sm-start rounded">
+                        <img src="../assets/media/logos/IRS_Logo.png" alt="IRS Logo" class="img-fluid rounded"
+                            style="max-width: 120px; width: 100%; height: auto;">
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between flex-wrap align-items-start mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="text-dark fs-2 fw-bold">IRS Form 8801</span>
+                                <p class="mb-1 text-muted">Department of the Treasury—Internal Revenue Service</p>
+                                <p class="fw-semibold mb-1">OMB No. 1545-1073</p>
+                                <p class="text-primary mb-1">Credit for Prior Year Minimum Tax—Individuals, Estates, and Trusts</p>
+                                <p class="fw-semibold mb-0">Tax Year 2025</p>
+                            </div>
+
+                            <div class="d-flex align-items-center mt-3 mt-sm-0">
+
+                                <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                    <a href="#"
+                                        class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                        data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-outline ki-night-day theme-light-show fs-1"></i>
+                                        <i class="ki-outline ki-moon theme-dark-show fs-1"></i>
+                                    </a>
+
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded 
+                                        menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color 
+                                        fw-semibold py-4 fs-base w-150px" data-kt-menu="true"
+                                        data-kt-element="theme-mode-menu">
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="light">
+                                                <span class="menu-icon"><i
+                                                        class="ki-outline ki-night-day fs-2"></i></span>
+                                                <span class="menu-title">Light</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="dark">
+                                                <span class="menu-icon"><i class="ki-outline ki-moon fs-2"></i></span>
+                                                <span class="menu-title">Dark</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="system">
+                                                <span class="menu-icon"><i class="ki-outline ki-screen fs-2"></i></span>
+                                                <span class="menu-title">System</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    onclick="window.location.href='Schedule3.html'">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xxl-8">
+            <div class="card-body">
+                <div class="align-items-center mb-2 border-bottom mb-2">
+                    <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                        Credit for Prior Year Minimum Tax—Individuals, Estates, and Trusts
+                    </p>
+                    <p class="text-gray-500 text-hover-primary mb-4">
+                        Complete the details below as per IRS Form 8801.
+                    </p>
+                </div>
+
+                <form id="Form8801Modal">
+
+                    <h4 class="mb-3">Form 8801 – Credit for Prior Year Minimum Tax—Individuals, Estates, and Trusts (2025)</h4>
+
+                    <!-- Basic Information -->
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Name(s) shown on return</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="Enter name(s)">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Identifying number</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., SSN or EIN">
+                        </div>
+                    </div>
+
+                    <!-- Part I – Net Minimum Tax on Exclusion Items -->
+                    <h5 class="mt-4 mb-2">Part I – Net Minimum Tax on Exclusion Items</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">1. Combine lines 1 and 2e of your 2024 Form 6251. Estates and trusts, see instructions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 50000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2. Enter adjustments and preferences treated as exclusion items (see instructions)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 10000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">3. Minimum tax credit net operating loss deduction (see instructions)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., -2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">4. Combine lines 1, 2, and 3. If zero or less, enter -0-. If more than $875,950 and you were married filing separately for 2024, see instructions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">5. Enter: $133,300 if married filing jointly or qualifying surviving spouse for 2024; $85,700 if single or head of household for 2024; or $66,650 if married filing separately for 2024. Estates and trusts, enter $29,900</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 133300">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">6. Enter: $1,218,700 if married filing jointly or qualifying surviving spouse for 2024; $609,350 if single, head of household, or married filing separately for 2024. Estates and trusts, enter $99,700</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1218700">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">7. Subtract line 6 from line 4. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">8. Multiply line 7 by 25% (0.25)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">9. Subtract line 8 from line 5. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">10. Subtract line 9 from line 4. If zero or less, enter -0-. Form 1040-NR filers, see instructions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">11. If for 2024 you filed Form 2555, see instructions for the amount to enter. If for 2024 you reported capital gain distributions, qualified dividends, or gain on Schedule D, complete Part III and enter from line 55. All others: If line 10 is $232,600 or less ($116,300 or less if married filing separately for 2024), multiply line 10 by 26% (0.26). Otherwise, multiply line 10 by 28% (0.28) and subtract $4,652 ($2,326 if married filing separately for 2024) from the result</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">12. Minimum tax foreign tax credit on exclusion items (see instructions)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">13. Tentative minimum tax on exclusion items. Subtract line 12 from line 11</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">14. Enter the amount from your 2024 Form 6251, line 10, or 2024 Schedule I (Form 1041), line 53</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 4000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">15. Net minimum tax on exclusion items. Subtract line 14 from line 13. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                    </div>
+
+                    <!-- Part II – Minimum Tax Credit and Carryforward to 2026 -->
+                    <h5 class="mt-4 mb-2">Part II – Minimum Tax Credit and Carryforward to 2026</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">16. Enter the amount from your 2024 Form 6251, line 11, or 2024 Schedule I (Form 1041), line 54</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 6000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">17. Enter the amount from line 15</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-fill from line 15">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">18. Subtract line 17 from line 16. If less than zero, enter as a negative amount</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">19. 2024 credit carryforward. Enter the amount from your 2024 Form 8801, line 26</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">20. Enter your 2024 unallowed qualified electric vehicle credit (see instructions)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 500">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">21. Combine lines 18 through 20. If zero or less, stop here and see the instructions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">22. Enter your 2025 regular income tax liability minus allowable credits (see instructions)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 8000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">23. Enter the amount from your 2025 Form 6251, line 9, or 2025 Schedule I (Form 1041), line 52</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">24. Subtract line 23 from line 22. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">25. Minimum tax credit. Enter the smaller of line 21 or line 24. Also enter this amount on your 2025 Schedule 3 (Form 1040), line 6b; or Form 1041, Schedule G, line 2c</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">26. Credit carryforward to 2026. Subtract line 25 from line 21</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                    </div>
+
+                    <!-- Part III – Tax Computation Using Maximum Capital Gains Rates -->
+                    <h5 class="mt-4 mb-2">Part III – Tax Computation Using Maximum Capital Gains Rates</h5>
+                    <p class="text-muted mb-3">Complete Part III only if you are required to do so by line 11 or by the Foreign Earned Income Tax Worksheet in the instructions.</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">27. Enter the amount from Form 8801, line 10. If you filed Form 2555 for 2024, enter the amount from line 3 of the Foreign Earned Income Tax Worksheet in the instructions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-fill or e.g., 30000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">28. Enter the amount from line 4 of your 2024 Qualified Dividends and Capital Gain Tax Worksheet, the amount from line 13 of your 2024 Schedule D Tax Worksheet, or the amount from line 26 of the 2024 Schedule D (Form 1041), whichever applies (as refigured for the AMT, if necessary)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 10000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">29. Enter the amount from line 19 of your 2024 Schedule D (Form 1040), or line 18b, column (2), of the 2024 Schedule D (Form 1041)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">30. Add lines 28 and 29, and enter the smaller of that result or the amount from line 10 of your 2024 Schedule D Tax Worksheet</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">31. Enter the smaller of line 27 or line 30</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">32. Subtract line 31 from line 27</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">33. If line 32 is $232,600 or less ($116,300 or less if married filing separately for 2024), multiply line 32 by 26% (0.26). Otherwise, multiply line 32 by 28% (0.28) and subtract $4,652 ($2,326 if married filing separately for 2024) from the result</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">34. Enter: $94,050 if married filing jointly or qualifying surviving spouse for 2024, $47,025 if single or married filing separately for 2024, $63,000 if head of household for 2024, or $3,150 for an estate or trust</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 94050">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">35. Enter the amount from line 5 of your 2024 Qualified Dividends and Capital Gain Tax Worksheet, the amount from line 14 of your 2024 Schedule D Tax Worksheet, or the amount from line 27 of the 2024 Schedule D (Form 1041), whichever applies</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">36. Subtract line 35 from line 34. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">37. Enter the smaller of line 27 or line 28</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">38. Enter the smaller of line 36 or line 37</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">39. Subtract line 38 from line 37</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">40. Enter: $518,900 if single for 2024, $259,450 if married filing separately for 2024, $578,700 if married filing jointly or qualifying surviving spouse for 2024, $551,350 if head of household for 2024, or $15,450 for an estate or trust</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 518900">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">41. Enter the amount from line 36</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-fill from line 36">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">42. Form 1040, 1040-SR, or 1040-NR filers, enter the amount from line 5 of your 2024 Qualified Dividends and Capital Gain Tax Worksheet or the amount from line 21 of your 2024 Schedule D Tax Worksheet, whichever applies. Form 1041 filers, enter the amount from line 27 of your 2024 Schedule D (Form 1041) or line 18 of your 2024 Schedule D Tax Worksheet, whichever applies</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 3000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">43. Add lines 41 and 42</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">44. Subtract line 43 from line 40. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">45. Enter the smaller of line 39 or line 44</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">46. Multiply line 45 by 15% (0.15)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">47. Enter the amount from line 38</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-fill from line 38">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">48. Add lines 36 and 47. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">49. Subtract line 48 from line 34. If zero or less, enter -0-</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">50. Enter the smaller of line 49 or line 39 - line 45 (if negative, enter 0)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">51. Multiply line 50 by 20% (0.20)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">52. Add lines 32, 38, 45, and 50</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">53. Subtract line 52 from line 27</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">54. Multiply line 53 by 25% (0.25)</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">55. Add lines 33, 46, 51, and 54</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">If line 27 is $232,600 or less ($116,300 or less if married filing separately for 2024), multiply line 27 by 26% (0.26). Otherwise, multiply line 27 by 28% (0.28) and subtract $4,652 ($2,326 if married filing separately for 2024) from the result</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Enter the smaller of line 55 or the above line here and on line 11</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="reset" class="btn btn-light">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>var hostUrl = "../assets/";</script>
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../assets/js/scripts.bundle.js"></script>
+</body>
+
+</html>

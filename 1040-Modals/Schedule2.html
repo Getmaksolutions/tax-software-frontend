@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IRS Form SCHEDULE 2 - Additional Taxes (2024)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+    <style>
+        /* Small local tweaks to match Schedule 1 styling */
+        .form-control.form-control-solid:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.18);
+            border-color: #0d6efd;
+        }
+
+        .card .section-title {
+            color: #0d6efd;
+            font-weight: 600;
+        }
+
+        .line-label {
+            font-size: 0.95rem;
+        }
+
+        .amount-input {
+            max-width: 230px;
+        }
+
+        .readonly-input {
+            background-color: #f8f9fa;
+        }
+
+        .small-muted {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        .table-compact td, .table-compact th { padding: .35rem; }
+    </style>
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <script>
+        var defaultThemeMode = "light"; var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+    <div class="container">
+        <div class="mt-4 pt-4"></div>
+
+        <div class="card mb-5 mb-xl-10 shadow-sm">
+            <div class="card-body p-4 p-md-6">
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center">
+
+                    <div class="me-4 mb-3 mb-sm-0 text-center text-sm-start rounded">
+                        <img src="../assets/media/logos/IRS_Logo.png" alt="IRS Logo" class="img-fluid rounded"
+                            style="max-width: 120px; width: 100%; height: auto;">
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between flex-wrap align-items-start mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="text-dark fs-2 fw-bold">IRS Form SCHEDULE 2</span>
+                                <p class="mb-1 text-muted">Department of the Treasury—Internal Revenue Service</p>
+                                <p class="fw-semibold mb-1">OMB No. 1545-0074</p>
+                                <p class="text-primary mb-1">Additional Taxes (Schedule 2 — Form 1040)</p>
+                                <p class="fw-semibold mb-0">Tax Year 2024</p>
+                            </div>
+
+                            <div class="d-flex align-items-center mt-3 mt-sm-0">
+                                <button type="button" class="btn btn-secondary"
+                                    onclick="window.location.href='../1040-Form.html'">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xxl-8">
+            <div class="card-body">
+                <div class="align-items-center mb-2 border-bottom mb-2">
+                    <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                        Additional Taxes — Schedule 2 (Form 1040)
+                    </p>
+                    <p class="text-gray-500 text-hover-primary mb-4">
+                        Fill in the applicable lines and attach required forms where indicated.
+                    </p>
+                </div>
+
+                <form id="Schedule2Form">
+
+                    <h5 class="mb-3 section-title">Part I — Tax</h5>
+
+                    <div class="row g-3">
+                        <!-- 1a -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">1a. Excess advance premium tax credit repayment. Attach Form 8962</label>
+                            <input id="line1a" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Enter amount (1a)">
+                        </div>
+
+                        <!-- 1b -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">1b. Repayment of new clean vehicle credit(s) transferred to a registered dealer. Attach Form 8936 and Schedule A (Form 8936)</label>
+                            <input id="line1b" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Enter amount (1b)">
+                        </div>
+
+                        <!-- 1c -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">1c. Repayment of previously owned clean vehicle credit(s) transferred to a registered dealer. Attach Form 8936 and Schedule A (Form 8936)</label>
+                            <input id="line1c" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Enter amount (1c)">
+                        </div>
+
+                        <!-- 1d -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">1d. Recapture of net EPE from Form 4255, line 2a, column (l)</label>
+                            <input id="line1d" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Enter amount (1d)">
+                        </div>
+
+                        <!-- 1e -->
+                        <div class="col-12">
+                            <label class="form-label line-label">1e. Excessive payments (EP) from Form 4255. Check applicable box and enter amount.</label>
+
+                            <table class="table table-borderless table-compact">
+                                <thead>
+                                    <tr>
+                                        <th style="width:40px"></th>
+                                        <th>Line</th>
+                                        <th style="width:240px">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1e_i"></td>
+                                        <td class="small-muted">(i) Line 1a, column (n)</td>
+                                        <td><input id="line1e_i" data-check="chk1e_i" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (i)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1e_ii"></td>
+                                        <td class="small-muted">(ii) Line 1c, column (n)</td>
+                                        <td><input id="line1e_ii" data-check="chk1e_ii" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (ii)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1e_iii"></td>
+                                        <td class="small-muted">(iii) Line 1d, column (n)</td>
+                                        <td><input id="line1e_iii" data-check="chk1e_iii" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (iii)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1e_iv"></td>
+                                        <td class="small-muted">(iv) Line 2a, column (n)</td>
+                                        <td><input id="line1e_iv" data-check="chk1e_iv" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (iv)"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 1f -->
+                        <div class="col-12">
+                            <label class="form-label line-label">1f. 20% EP from Form 4255. Check applicable box and enter amount. See instructions.</label>
+
+                            <table class="table table-borderless table-compact">
+                                <thead>
+                                    <tr>
+                                        <th style="width:40px"></th>
+                                        <th>Line</th>
+                                        <th style="width:240px">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1f_i"></td>
+                                        <td class="small-muted">(i)</td>
+                                        <td><input id="line1f_i" data-check="chk1f_i" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (i)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1f_ii"></td>
+                                        <td class="small-muted">(ii)</td>
+                                        <td><input id="line1f_ii" data-check="chk1f_ii" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (ii)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1f_iii"></td>
+                                        <td class="small-muted">(iii)</td>
+                                        <td><input id="line1f_iii" data-check="chk1f_iii" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (iii)"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" id="chk1f_iv"></td>
+                                        <td class="small-muted">(iv)</td>
+                                        <td><input id="line1f_iv" data-check="chk1f_iv" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (iv)"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 1y (other additions) -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">1y. Other additions to tax (see instructions)</label>
+                            <input id="line1y" type="number" step="0.01" class="form-control form-control-solid sum-1 amount-input" placeholder="Amount (1y)">
+                        </div>
+
+                        <!-- 1z computed -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">1z. Add lines 1a through 1y</label>
+                            <input id="line1z" type="text" readonly class="form-control readonly-input" placeholder="Calculated total (1z)">
+                        </div>
+
+                        <!-- Line 2 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">2. Alternative minimum tax. Attach Form 6251</label>
+                            <input id="line2" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (2)">
+                        </div>
+
+                        <!-- Line 3 computed -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">3. Add lines 1z and 2. Enter here and on Form 1040 line 17</label>
+                            <input id="line3" type="text" readonly class="form-control readonly-input" placeholder="Calculated total (3)">
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5 class="mb-3 section-title">Part II — Other Taxes</h5>
+
+                    <div class="row g-3">
+                        <!-- 4 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">4. Self-employment tax. Attach Schedule SE</label>
+                            <input id="line4" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (4)">
+                        </div>
+
+                        <!-- 5 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">5. Social security and Medicare tax on unreported tip income. Attach Form 4137</label>
+                            <input id="line5" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (5)">
+                        </div>
+
+                        <!-- 6 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">6. Uncollected social security and Medicare tax on wages. Attach Form 8919</label>
+                            <input id="line6" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (6)">
+                        </div>
+
+                        <!-- 7 computed -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">7. Total additional social security and Medicare tax. Add lines 5 and 6</label>
+                            <input id="line7" type="text" readonly class="form-control readonly-input" placeholder="Calculated total (7)">
+                        </div>
+
+                        <!-- 8 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">8. Additional tax on IRAs or other tax-favored accounts. Attach Form 5329 if required. If not required, check here</label>
+                            <div class="d-flex align-items-center gap-2">
+                                <input id="chk8_notrequired" type="checkbox">
+                                <label for="chk8_notrequired" class="small-muted mb-0">Not required</label>
+                                <input id="line8" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (8)">
+                            </div>
+                        </div>
+
+                        <!-- 9 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">9. Household employment taxes. Attach Schedule H</label>
+                            <input id="line9" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (9)">
+                        </div>
+
+                        <!-- 10 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">10. Repayment of first-time homebuyer credit. Attach Form 5405 if required</label>
+                            <input id="line10" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (10)">
+                        </div>
+
+                        <!-- 11 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">11. Additional Medicare Tax. Attach Form 8959</label>
+                            <input id="line11" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (11)">
+                        </div>
+
+                        <!-- 12 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">12. Net investment income tax. Attach Form 8960</label>
+                            <input id="line12" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (12)">
+                        </div>
+
+                        <!-- 13 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">13. Uncollected social security and Medicare or RRTA tax on tips or group-term life insurance from Form W-2, box 12</label>
+                            <input id="line13" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (13)">
+                        </div>
+
+                        <!-- 14 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">14. Interest on tax due on installment income from the sale of certain residential lots and timeshares</label>
+                            <input id="line14" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (14)">
+                        </div>
+
+                        <!-- 15 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">15. Interest on the deferred tax on gain from certain installment sales with a sales price over $150,000</label>
+                            <input id="line15" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (15)">
+                        </div>
+
+                        <!-- 16 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">16. Recapture of low-income housing credit. Attach Form 8611</label>
+                            <input id="line16" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (16)">
+                        </div>
+
+                        <!-- continued on page 2 (17) -->
+                        <div class="col-12 mt-3">
+                            <label class="form-label line-label">17. Other additional taxes — List each type, form number, and amount.</label>
+
+                            <div id="line17Container">
+                                <!-- dynamic items will appear here -->
+                            </div>
+
+                            <div class="mt-2">
+                                <button type="button" id="add17Item" class="btn btn-sm btn-primary">Add item (17)</button>
+                            </div>
+                        </div>
+
+                        <!-- 18 total of 17 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">18. Total additional taxes. Add lines 17a through 17z</label>
+                            <input id="line18" type="text" readonly class="form-control readonly-input" placeholder="Calculated total (18)">
+                        </div>
+
+                        <!-- 19 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">19. Recapture of net EPE from Form 4255, line 1d, column (l)</label>
+                            <input id="line19" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (19)">
+                        </div>
+
+                        <!-- 20 -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">20. Section 965 net tax liability installment from Form 965-A</label>
+                            <input id="line20" type="number" step="0.01" class="form-control form-control-solid amount-input" placeholder="Enter amount (20)">
+                        </div>
+
+                        <!-- 21 total -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label line-label">21. Add lines 4, 7 through 16, 18, and 19. These are your total other taxes. Enter here and on Form 1040, line 23</label>
+                            <input id="line21" type="text" readonly class="form-control readonly-input" placeholder="Calculated total (21)">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="reset" id="resetBtn" class="btn btn-light">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>var hostUrl = "../assets/";</script>
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../assets/js/scripts.bundle.js"></script>
+
+    <script>
+        // Utility helpers
+        function toNumber(v) {
+            if (v === null || v === undefined || v === '') return 0;
+            var n = parseFloat(String(v).replace(/,/g, ''));
+            return isNaN(n) ? 0 : n;
+        }
+
+        function formatNumberForDisplay(n) {
+            if (n === 0) return '';
+            return Number(n).toFixed(2);
+        }
+
+        // Update functions
+        function update1z() {
+            var sum = 0;
+            document.querySelectorAll('.sum-1').forEach(function (inp) {
+                var checkId = inp.getAttribute('data-check');
+                if (checkId) {
+                    var chk = document.getElementById(checkId);
+                    if (!chk || chk.checked) {
+                        sum += toNumber(inp.value);
+                    }
+                } else {
+                    sum += toNumber(inp.value);
+                }
+            });
+            document.getElementById('line1z').value = formatNumberForDisplay(sum);
+            updateLine3();
+        }
+
+        function updateLine3() {
+            var v1 = toNumber(document.getElementById('line1z').value);
+            var v2 = toNumber(document.getElementById('line2').value);
+            document.getElementById('line3').value = formatNumberForDisplay(v1 + v2);
+        }
+
+        function updateLine7() {
+            var v5 = toNumber(document.getElementById('line5').value);
+            var v6 = toNumber(document.getElementById('line6').value);
+            document.getElementById('line7').value = formatNumberForDisplay(v5 + v6);
+            updateLine21();
+        }
+
+        function updateLine18() {
+            var sum = 0;
+            document.querySelectorAll('.sum-17-amount').forEach(function (amt) {
+                sum += toNumber(amt.value);
+            });
+            document.getElementById('line18').value = formatNumberForDisplay(sum);
+            updateLine21();
+        }
+
+        function updateLine21() {
+            // lines to include: 4, 7-16, 18, 19
+            var ids = ['line4','line7','line8','line9','line10','line11','line12','line13','line14','line15','line16','line18','line19'];
+            var sum = 0;
+            ids.forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) sum += toNumber(el.value);
+            });
+            document.getElementById('line21').value = formatNumberForDisplay(sum);
+        }
+
+        // Add dynamic 17 items
+        function add17Item(desc, amt) {
+            var container = document.getElementById('line17Container');
+            var idx = Date.now();
+            var wrapper = document.createElement('div');
+            wrapper.className = 'd-flex gap-2 align-items-center mt-2';
+            wrapper.setAttribute('data-idx', idx);
+
+            var descInput = document.createElement('input');
+            descInput.type = 'text';
+            descInput.className = 'form-control form-control-solid';
+            descInput.placeholder = 'Type/Form (e.g., Recapture - Form 1234)';
+            descInput.style.maxWidth = '65%';
+            if (desc) descInput.value = desc;
+
+            var amtInput = document.createElement('input');
+            amtInput.type = 'number';
+            amtInput.step = '0.01';
+            amtInput.className = 'form-control form-control-solid sum-17-amount amount-input';
+            amtInput.placeholder = 'Amount';
+            if (amt) amtInput.value = amt;
+            amtInput.addEventListener('input', function () { updateLine18(); });
+
+            var removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'btn btn-sm btn-danger';
+            removeBtn.innerText = 'Remove';
+            removeBtn.addEventListener('click', function () {
+                wrapper.remove();
+                updateLine18();
+            });
+
+            wrapper.appendChild(descInput);
+            wrapper.appendChild(amtInput);
+            wrapper.appendChild(removeBtn);
+            container.appendChild(wrapper);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initial wiring
+            document.querySelectorAll('.sum-1').forEach(function (el) {
+                el.addEventListener('input', update1z);
+            });
+
+            // Wire checkboxes that affect sum-1 inputs
+            document.querySelectorAll('input[type=checkbox][id^="chk1e_"], input[type=checkbox][id^="chk1f_"]').forEach(function (cb) {
+                cb.addEventListener('change', update1z);
+            });
+
+            document.getElementById('line2').addEventListener('input', updateLine3);
+
+            document.getElementById('line5').addEventListener('input', updateLine7);
+            document.getElementById('line6').addEventListener('input', updateLine7);
+
+            ['line4','line7','line8','line9','line10','line11','line12','line13','line14','line15','line16','line19'].forEach(function (id) {
+                var el = document.getElementById(id);
+                if (el) el.addEventListener('input', updateLine21);
+            });
+
+            document.getElementById('add17Item').addEventListener('click', function () {
+                add17Item();
+            });
+
+            // Add one empty 17 item by default to encourage entry
+            add17Item();
+
+            // Form submit
+            document.getElementById('Schedule2Form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Serialize some data (example) and show success
+                var data = {};
+                ['line1a','line1b','line1c','line1d','line1z','line2','line3','line4','line5','line6','line7','line8','line9','line10','line11','line12','line13','line14','line15','line16','line18','line19','line20','line21'].forEach(function (id) {
+                    var el = document.getElementById(id);
+                    data[id] = el ? el.value : '';
+                });
+
+                // Gather 17 items
+                data['line17'] = [];
+                document.querySelectorAll('#line17Container > div').forEach(function (row) {
+                    var desc = row.querySelector('input[type=text]');
+                    var amt = row.querySelector('input[type=number]');
+                    if (desc && amt && (desc.value.trim() !== '' || amt.value.trim() !== '')) {
+                        data['line17'].push({ desc: desc.value.trim(), amount: amt.value });
+                    }
+                });
+
+                console.log('Schedule 2 data:', data);
+                alert('Schedule 2 saved (data printed to console).');
+            });
+
+            // Reset handler
+            document.getElementById('resetBtn').addEventListener('click', function () {
+                setTimeout(function () {
+                    update1z(); updateLine3(); updateLine7(); updateLine18(); updateLine21();
+                }, 50);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

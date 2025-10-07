@@ -119,10 +119,10 @@
             <div class="card-body">
                 <div class="align-items-center mb-2 border-bottom mb-2">
                     <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
-                        Qualified Adoption Expenses
+                        Additional Credits and Payments
                     </p>
                     <p class="text-gray-500 text-hover-primary mb-4">
-                        Complete the details below as per IRS Form 8839.
+                        Complete the details below as per IRS Form Schedule 3.
                     </p>
                 </div>
 
@@ -135,30 +135,42 @@
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 1 – Foreign Tax Credit (Form 1116)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 500">
+                            <input type="number" id="txtForeignTaxCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 1116" step="0.01"
+                                    onclick="window.location.href='Form1116.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 2 – Child & Dependent Care Credit (Form 2441)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1200">
+                            <input type="number" id="txtChildCareCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 2441" step="0.01"
+                                    onclick="window.location.href='Form2441.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 3 – Education Credits (Form 8863, line 19)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1500">
+                            <input type="number" id="txtEducationCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8863" step="0.01"
+                                    onclick="window.location.href='Form8863.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 4 – Retirement Savings Contributions Credit (Form
                                 8880)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 400">
+                            <input type="number" id="txtRetirementSavingCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8880" step="0.01"
+                                    onclick="window.location.href='Form8880.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 5a – Residential Clean Energy Credit (Form 5695, line
                                 15)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 800">
+                                <input type="number" id="txtResidentialCleanEnergyCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 5695" step="0.01"
+                                    onclick="window.location.href='Form5695.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 5b – Energy Efficient Home Improvement Credit (Form 5695,
                                 line 32)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 300">
+                                 <input type="number" id="txtEnergyEfficientHomeCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 5695" step="0.01"
+                                    onclick="window.location.href='Form5695.html'">
                         </div>
 
                         <!-- Lines 6a-6z – Other Nonrefundable Credits -->
@@ -167,19 +179,27 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">6a – General Business Credit (Form 3800)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 250">
+                            <input type="number" id="txtGeneralBusinessCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 3800" step="0.01"
+                                    onclick="window.location.href='Form3800.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">6b – Credit for Prior Year Minimum Tax (Form 8801)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 100">
+                            <input type="number" id="txtcredPriorYrMinTax" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8801" step="0.01"
+                                    onclick="window.location.href='Form8801.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">6c – Adoption Credit (Form 8839)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                            <input type="number" id="txtAdoptionCredit" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8839" step="0.01"
+                                    onclick="window.location.href='Form8839.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">6d – Credit for the Elderly or Disabled (Schedule R)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 150">
+                            <input type="number" id="txtcredElderlyOrDisabled" class="form-control form-control-solid"
+                                    placeholder="Click to open Schedule R" step="0.01"
+                                    onclick="window.location.href='ScheduleR.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">6f – Clean Vehicle Credit (Form 8936)</label>
@@ -209,7 +229,9 @@
                     <div class="row g-3">
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 9 – Net Premium Tax Credit (Form 8962)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 600">
+                            <input type="number" id="txtPaymentRefundCred" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8962" step="0.01"
+                                    onclick="window.location.href='Form8962.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 10 – Amount paid with extension to file</label>
@@ -222,7 +244,9 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">Line 12 – Credit for federal tax on fuels (Form 4136)</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 50">
+                            <input type="number" id="txtPaymentRefundCred" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 4136" step="0.01"
+                                    onclick="window.location.href='Form4136.html'">
                         </div>
 
                         <!-- Lines 13a-13z – Other refundable/payments -->

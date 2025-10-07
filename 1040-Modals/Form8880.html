@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>IRS Form 8880 - Credit for Qualified Retirement Savings Contributions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+    <style>
+        .form-control form-control-solid form-control form-control-solid-solid:focus {
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body id="kt_body" class="auth-bg">
+    <script>
+        var defaultThemeMode = "light"; var themeMode;
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
+                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
+            } else {
+                if (localStorage.getItem("data-bs-theme") !== null) {
+                    themeMode = localStorage.getItem("data-bs-theme");
+                } else { themeMode = defaultThemeMode; }
+            }
+            if (themeMode === "system") {
+                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-bs-theme", themeMode);
+        }
+    </script>
+
+    <div class="container">
+        <div class="mt-4 pt-4"></div>
+
+        <div class="card mb-5 mb-xl-10 shadow-sm">
+            <div class="card-body p-4 p-md-6">
+                <div class="d-flex flex-wrap flex-sm-nowrap align-items-center">
+
+                    <div class="me-4 mb-3 mb-sm-0 text-center text-sm-start rounded">
+                        <img src="../assets/media/logos/IRS_Logo.png" alt="IRS Logo" class="img-fluid rounded"
+                            style="max-width: 120px; width: 100%; height: auto;">
+                    </div>
+
+                    <div class="flex-grow-1">
+                        <div class="d-flex justify-content-between flex-wrap align-items-start mb-3">
+                            <div class="d-flex flex-column">
+                                <span class="text-dark fs-2 fw-bold">IRS Form 8880</span>
+                                <p class="mb-1 text-muted">Department of the Treasury—Internal Revenue Service</p>
+                                <p class="fw-semibold mb-1">OMB No. 1545-0074</p>
+                                <p class="text-primary mb-1">Credit for Qualified Retirement Savings Contributions</p>
+                                <p class="fw-semibold mb-0">Tax Year 2025</p>
+                            </div>
+
+                            <div class="d-flex align-items-center mt-3 mt-sm-0">
+
+                                <div class="d-flex align-items-center ms-1 ms-lg-3">
+                                    <a href="#"
+                                        class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
+                                        data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-outline ki-night-day theme-light-show fs-1"></i>
+                                        <i class="ki-outline ki-moon theme-dark-show fs-1"></i>
+                                    </a>
+
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded 
+                                        menu-title-gray-700 menu-icon-gray-500 menu-active-bg menu-state-color 
+                                        fw-semibold py-4 fs-base w-150px" data-kt-menu="true"
+                                        data-kt-element="theme-mode-menu">
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="light">
+                                                <span class="menu-icon"><i
+                                                        class="ki-outline ki-night-day fs-2"></i></span>
+                                                <span class="menu-title">Light</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="dark">
+                                                <span class="menu-icon"><i class="ki-outline ki-moon fs-2"></i></span>
+                                                <span class="menu-title">Dark</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
+                                                data-kt-value="system">
+                                                <span class="menu-icon"><i class="ki-outline ki-screen fs-2"></i></span>
+                                                <span class="menu-title">System</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-outline-secondary"
+                                    onclick="window.location.href='Schedule3.html'">
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mb-xxl-8">
+            <div class="card-body">
+                <div class="align-items-center mb-2 border-bottom mb-2">
+                    <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
+                        Credit for Qualified Retirement Savings Contributions
+                    </p>
+                    <p class="text-gray-500 text-hover-primary mb-4">
+                        Complete the details below as per IRS Form 8880.
+                    </p>
+                </div>
+
+                <form id="Form8880Modal">
+
+                    <h4 class="mb-3">Form 8880 – Credit for Qualified Retirement Savings Contributions (2025)</h4>
+
+                    <div class="alert alert-warning">
+                        <strong>CAUTION:</strong> You cannot take this credit if either of the following applies.<br>
+                        • The amount on Form 1040, 1040-SR, or 1040-NR, line 11, is more than $38,250 ($57,375 if head of household; $76,500 if married filing jointly).<br>
+                        • The person(s) who made the qualified contribution or elective deferral (a) was born after January 1, 2007; (b) is claimed as a dependent on someone else’s 2024 tax return; or (c) was a student (see instructions).
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Name(s) shown on return</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="Enter name(s)">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Your social security number</label>
+                            <input type="text" class="form-control form-control-solid" placeholder="e.g., XXX-XX-XXXX">
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-2">Contributions and Distributions</h5>
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>(a) You</th>
+                                        <th>(b) Your spouse</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1. Traditional and Roth IRA contributions, and ABLE account contributions by the designated beneficiary for 2024. Do not include rollover contributions</td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="e.g., 2000"></td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="e.g., 2000"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2. Elective deferrals to a 401(k) or other qualified employer plan, voluntary employee contributions, and 501(c)(18)(D) plan contributions for 2024</td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="e.g., 3000"></td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="e.g., 3000"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3. Add lines 1 and 2</td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="Auto-sum"></td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="Auto-sum"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4. Certain distributions received after 2021 and before the due date (including extensions) of your 2024 tax return. If married filing jointly, include both spouses’ amounts</td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="e.g., 500"></td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="e.g., 500"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5. Subtract line 4 from line 3. If zero or less, enter -0-</td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="Auto-calc"></td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="Auto-calc"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6. In each column, enter the smaller of line 5 or $2,000</td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="Auto-min"></td>
+                                        <td><input type="number" class="form-control form-control-solid" placeholder="Auto-min"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">7. Add the amounts on line 6. If zero, stop; you can’t take this credit</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-sum">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">8. Enter the amount from Form 1040, 1040-SR, or 1040-NR, line 11</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 50000">
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-2">9. Enter the applicable decimal amount from the table below</h5>
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>If line 8 is— Over—</th>
+                                        <th>But not over—</th>
+                                        <th>Married filing jointly</th>
+                                        <th>Head of household</th>
+                                        <th>Single, Married filing separately, or Qualifying surviving spouse</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>---</td>
+                                        <td>$23,000</td>
+                                        <td>0.5</td>
+                                        <td>0.5</td>
+                                        <td>0.5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$23,000</td>
+                                        <td>$25,000</td>
+                                        <td>0.5</td>
+                                        <td>0.5</td>
+                                        <td>0.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$25,000</td>
+                                        <td>$34,500</td>
+                                        <td>0.5</td>
+                                        <td>0.5</td>
+                                        <td>0.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$34,500</td>
+                                        <td>$37,500</td>
+                                        <td>0.5</td>
+                                        <td>0.2</td>
+                                        <td>0.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$37,500</td>
+                                        <td>$38,250</td>
+                                        <td>0.5</td>
+                                        <td>0.1</td>
+                                        <td>0.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$38,250</td>
+                                        <td>$46,000</td>
+                                        <td>0.5</td>
+                                        <td>0.1</td>
+                                        <td>0.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$46,000</td>
+                                        <td>$50,000</td>
+                                        <td>0.2</td>
+                                        <td>0.1</td>
+                                        <td>0.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$50,000</td>
+                                        <td>$57,375</td>
+                                        <td>0.1</td>
+                                        <td>0.1</td>
+                                        <td>0.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$57,375</td>
+                                        <td>$76,500</td>
+                                        <td>0.1</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>$76,500</td>
+                                        <td>---</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                        <td>0.0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <label class="form-label">Enter on line 9</label>
+                        <input type="number" step="0.1" class="form-control form-control-solid" placeholder="e.g., 0.5">
+                        <p class="text-muted">Note: If line 9 is zero, stop; you can’t take this credit.</p>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">10. Multiply line 7 by line 9</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">11. Limitation based on tax liability. Enter the amount from the Credit Limit Worksheet in the instructions</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 1000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">12. Credit for qualified retirement savings contributions.Enter the smaller of line 10 or line 11</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-min">
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4 mb-2">Credit Limit Worksheet</h5>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">1. Enter the amount from Form 1040, 1040-SR, or 1040-NR, line 18</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 2000">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">2. Enter the total of your credits from Schedule 3, lines 1 through 3, 6d, and 6l</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 500">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">3. Subtract line 2 from line 1. Also enter this amount on Form 8880, line 11. But if zero or less, stop; you can’t take the credit</label>
+                            <input type="number" class="form-control form-control-solid" placeholder="Auto-calc">
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+                        <button type="reset" class="btn btn-light">Reset</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>var hostUrl = "../assets/";</script>
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
+    <script src="../assets/js/scripts.bundle.js"></script>
+</body>
+
+</html>

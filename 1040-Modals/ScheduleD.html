@@ -119,10 +119,10 @@
             <div class="card-body">
                 <div class="align-items-center mb-2 border-bottom mb-2">
                     <p class="text-gray-900 text-hover-primary fs-2 fw-bold me-1 mb-0">
-                        Qualified Adoption Expenses
+                        Capital Gains and Losses
                     </p>
                     <p class="text-gray-500 text-hover-primary mb-4">
-                        Complete the details below as per IRS Form 8839.
+                        Complete the details below as per IRS Form Schedule-D.
                     </p>
                 </div>
 
@@ -133,11 +133,15 @@
                     <div class="row g-3 mb-3">
                         <div class="col-12 col-md-6">
                             <label class="form-label">1. Short-term transactions reported on Form 8949</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 5000" step="0.01">
+                             <input type="number" id="txtStGainLoss" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8949" step="0.01"
+                                    onclick="window.location.href='Form8949.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">2. Totals from Form 8949, Part I</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 3000" step="0.01">
+                             <input type="number" id="txtTotal8949I" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8949" step="0.01"
+                                    onclick="window.location.href='Form8949.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">3. Short-term capital gain or (loss)</label>
@@ -154,7 +158,9 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">9. Totals from Form 8949, Part II</label>
-                            <input type="number" class="form-control form-control-solid" placeholder="e.g., 7000" step="0.01">
+                            <input type="number" id="txtTotal8949II" class="form-control form-control-solid"
+                                    placeholder="Click to open Form 8949" step="0.01"
+                                    onclick="window.location.href='Form8949.html'">
                         </div>
                         <div class="col-12 col-md-6">
                             <label class="form-label">10. Long-term capital gain or (loss)</label>
